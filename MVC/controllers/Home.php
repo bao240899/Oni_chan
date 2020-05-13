@@ -21,7 +21,7 @@ class Home extends Controller{
         $manga = $this->model("MangaModel");
         //Call Views
         $this->view("master",[
-            "Page"=>"Home-Page",
+            "Page"=>"Home",
             "Manga"=>$manga->GetManga()
         ]);
     }
