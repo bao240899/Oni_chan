@@ -16,15 +16,12 @@ class admin extends Controller
     public function index(){
         
     }
-
+    ///////////////// admin Manga /////////////////
     function getmanga()
     {
-        // Call Models
-        $manga = $this->model("MangaModel");
-        //Call Views
         $this->view("adminpage", [
             "Page" => "GetManga",
-            "Manga" => $manga->GetManga()
+            "Manga" => $this->mangaModel->GetManga()
         ]);
     }
     function addmanga()
@@ -35,7 +32,6 @@ class admin extends Controller
     }
     function addMangaProcess()
     {
-        // GET Data
         if (isset($_POST["bntAddManga"])) {
             $mangaID = $_POST["bookid"];
             $mangaName = $_POST["bookname"];
@@ -45,9 +41,6 @@ class admin extends Controller
             $Description = $_POST["description"];
             $Cover = $_POST["cover"];
         }
-
-        //Call Views
-
         $this->mangaModel->addManga($mangaID, $mangaName, $Author, $Artists, $CategoryID, $Description, $Cover);
         header("location:./getmanga");
     }
@@ -59,7 +52,6 @@ class admin extends Controller
         ]);
     }
     function editMangaProcess(){
-        // GET Data
         if(isset($_POST["bntEditManga"])){
             $mangaID=$_POST["bookid"];
             $mangaName=$_POST["bookname"];
@@ -76,10 +68,9 @@ class admin extends Controller
         $this->mangaModel->DeleteManga($mangaID);
         header("location:../getmanga");
     }
-    ////////////////////////////////////////////////////
+    /////////////////////// admin chapter/////////////////////////////
     function getchapter($mangaID)
     {
-        
         $this->view("adminpage", [
             "Page" => "GetChapter",
             "Chapter" => $this->chapterModel->getChapterByMangaID($mangaID)
@@ -135,10 +126,9 @@ class admin extends Controller
         $this->chapterModel->deleteChapter($chapterID);
         header("location:http://localhost:8080/Oni_chan_project/Source_Code/admin/GetChapter/$mangaID");
     }
-    ///////////////////////////////////////////////////////
+    //////////////////////////admin comment///////////////////////////
     function getcomment()
     {
-        //Call Views
         $this->view("adminpage", [
             "Page" => "GetComment",
             "comment" => $this->commentModel->getComment()
@@ -148,20 +138,14 @@ class admin extends Controller
         $this->commentModel->deleteComment($commentID);
         header("location:http://localhost:8080/Oni_chan_project/Source_Code/admin/getcomment");
     }
-    ////////////////////////////////////////////////////////
+    /////////////////////////// admin user/////////////////////////////
     function getuser()
     {
-        // Call Models
-        $this->model("UserModel")->GetUser();
-        //Call Views
         $this->view("adminpage", [
             "Page" => "GetUser",
             "User" => $this->model("UserModel")->GetUser()
         ]);
     }
-
-    
-
     function edituser($userID)
     {
         // Call Models
@@ -172,7 +156,6 @@ class admin extends Controller
             "User" => $this->model("UserModel")->EditUser($userID)
         ]);
     }
-
     function edituserprocess()
     {
         //Get Data from Form
@@ -191,9 +174,8 @@ class admin extends Controller
         }
     }
 
-    function deleteuser($userID)
+    function deleteUser($userID)
     {
-        // Call Models
         $this->userModel->DeleteUser($userID);
         header("location:../getuser");
     }
