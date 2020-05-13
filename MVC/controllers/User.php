@@ -1,5 +1,5 @@
 <?php
-class Users extends Controller
+class User extends Controller
 {
     public $UserModel;
     public function __construct()
@@ -43,15 +43,18 @@ class Users extends Controller
             $email = $_POST["email"];
             $password = $_POST["password"];
         }
-        $true = $this->UserModel->checkUser($email, $password);
-        if (mysqli_num_rows($true) > 0) {
+        $check = $this->UserModel->checkUser($email, $password);
+        if (mysqli_num_rows($check) > 0) {
             $_SESSION["userID"] = $email;
-            header("location:../home");
+            header("location:./Oni_chan");
         } else {
-            header("location:./login");
+            $_SESSION["userID"] = "null";
+            header("location:./Oni_chan/User/login");
         }
     }
+    public function Logout(){
 
+    }
     public function DetailUser()
     {
         $user = $this->model("UserModel");
