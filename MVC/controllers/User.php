@@ -82,9 +82,14 @@ class User extends Controller
             $result = $this->UserModel->EditUserprocess($userID, $password, $username, $gender);
         }
     }
+
+    function account($userID){
+        
+    }
+    
     function Follow($userID)
     {
-        $this->view("master", [
+        $this->view("DetailUser", [
             "Page" => "Follow",
             "Manga" => $this->UserModel->follow($userID)
         ]);
