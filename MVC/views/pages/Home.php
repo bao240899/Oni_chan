@@ -47,7 +47,7 @@
           while ($row = mysqli_fetch_assoc($data["Manga"])){
       ?>
         <div class="col-md-3 pb-1 pb-md-0">
-           <a href="home/detailmanga/<?=$row["mangaID"]?>"><div class="card">
+           <a href="manga/detailmanga/<?=$row["mangaID"]?>"><div class="card">
             <img class="card-img-top" src="<?= $row["coverImage"]?>" alt="image">
 			   </div></a>
         </div>

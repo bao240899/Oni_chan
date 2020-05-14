@@ -8,6 +8,9 @@ class Home extends Controller
 
     function __construct()
     {
+        if(!isset($_SESSION["userID"])){
+            $_SESSION["userID"] = "somebody";
+        }
         $this->mangaModel = $this->model("MangaModel");
         $this->commentModel = $this->model("CommentModel");
         $this->UserModel = $this->model("UserModel");

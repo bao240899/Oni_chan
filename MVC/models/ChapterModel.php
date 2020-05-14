@@ -1,5 +1,5 @@
 <?php
-class ChapterModel extends DB{
+class chapterModel extends DB{
     public function GetChapterByID($mangaID,$chapterID){
         $qr = "SELECT * FROM chapter where mangaID= '$mangaID' and chapterID= '$chapterID' ";
         $rs= mysqli_query($this->con, $qr);
@@ -9,7 +9,7 @@ class ChapterModel extends DB{
         return $arr;
     }
     public function getChapterByMangaID($mangaID){
-        $qr = "SELECT * FROM chapter where mangaID= '$mangaID'";
+        $qr = "SELECT * FROM chapter where mangaID= '$mangaID' ORDER BY `chapter`.`lastChapter` ASC";
         return mysqli_query($this->con, $qr);
     }
     public function getChapterByChapterID($chapterID){

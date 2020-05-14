@@ -37,7 +37,8 @@
 				<a class="dropdown-item" href="#">Account</a>
 				<a class="dropdown-item" href="#">Follow</a>
 				<div class="dropdown-divider"></div>
-				<a class="dropdown-item" href="#">Log Out</a>
+				<a class="dropdown-item" href="http://localhost:8080/Oni_chan/user/login">Log in</a>
+				<a class="dropdown-item" href="http://localhost:8080/Oni_chan/user/logout">Log Out</a>
 			  </div>
 		 </li>
 			</ul>

@@ -1,7 +1,7 @@
 <?php
 $fields = mysqli_fetch_array($data["Manga"]);
-$firstChapter=mysqli_fetch_array($data["firstChapter"]);
-$lastChapter=mysqli_fetch_array($data["lastChapter"]);
+$firstChapter = mysqli_fetch_array($data["firstChapter"]);
+$lastChapter = mysqli_fetch_array($data["lastChapter"]);
 ?>
 <div class="container">
 	<!-- Source of product -->
@@ -42,10 +42,29 @@ $lastChapter=mysqli_fetch_array($data["lastChapter"]);
 						</tr>
 						<tr style="border-collapse: 2"></tr>
 					</table><br>
-					<button class="btn btn-info" name="follow"><i class="fas fa-heart"></i> Follow</button><br><br>
-					<a href="http://localhost:8080/Oni_chan_project/Source_Code/readmanga/readchapter/<?=$fields["mangaID"]?>/<?=$firstChapter['chapterID']?>"><button class="btn btn-primary" name="firstChapter">First Chapter</button></a>
-					<a href="http://localhost:8080/Oni_chan_project/Source_Code/readmanga/readchapter/<?=$fields["mangaID"]?>/<?=$lastChapter['chapterID']?>"><button class="btn btn-primary" name="lastChapter">Last Chapter</button></a>
-					
+					<?php
+					if (!isset($_SESSION["userID"]) || $_SESSION["userID"] == "somebody") {
+					?>
+						<a href="http://localhost:8080/Oni_chan/user/login"><button class="btn btn-info" name="follow"><i class="fas fa-heart"></i>Login to Follow</button></a>
+					<?php
+					} else { ?>
+						<?php
+						if (mysqli_num_rows($data["checkFollow"]) > 0) {
+						?>
+							<a href="http://localhost:8080/Oni_chan/user/unFollowProcess/<?= $_SESSION['userID'] ?>/<?= $fields['mangaID'] ?>"><button class="btn btn-info" name="follow"><i></i>Un Follow</button></a>
+						<?php
+						} else {
+						?>
+							<a href="http://localhost:8080/Oni_chan/user/addFollowProcess/<?= $_SESSION['userID'] ?>/<?= $fields['mangaID'] ?>"><button class="btn btn-info" name="follow"><i class="fas fa-heart"></i>Follow</button></a>
+						<?php
+						}
+						?>
+					<?php }
+					?>
+					<br><br>
+					<a href="http://localhost:8080/Oni_chan/manga/readchapter/<?= $fields["mangaID"] ?>/<?= $firstChapter['chapterID'] ?>"><button class="btn btn-primary" name="firstChapter">First Chapter</button></a>
+					<a href="http://localhost:8080/Oni_chan/manga/readchapter/<?= $fields["mangaID"] ?>/<?= $lastChapter['chapterID'] ?>"><button class="btn btn-primary" name="lastChapter">Last Chapter</button></a>
+
 				</div>
 			</div>
 			<div class="detail">
@@ -70,7 +89,7 @@ $lastChapter=mysqli_fetch_array($data["lastChapter"]);
 					while ($fields = mysqli_fetch_array($data["chapter"])) {
 					?>
 						<p>
-							<a href="http://localhost:8080/Oni_chan_project/Source_Code/readmanga/readchapter/<?= $fields["mangaID"] ?>/<?= $fields["chapterID"] ?>"><?= $fields["chapterName"] ?></a>
+							<a href="http://localhost:8080/Oni_chan/manga/readchapter/<?= $fields["mangaID"] ?>/<?= $fields["chapterID"] ?>"><?= $fields["chapterName"] ?></a>
 						</p>
 					<?php
 					}

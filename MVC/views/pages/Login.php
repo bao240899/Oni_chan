@@ -2,7 +2,7 @@
     <div class="card bg-light">
       <article class="card-body mx-auto" style="max-width: 400px;">
         <h4 class="card-title mt-3 text-center">SIGN IN</h4>
-        <form method="POST" action="./loginProcess">
+        <form method="POST" action="http://localhost:8080/Oni_chan/user/loginProcess">
           <div class="form-group input-group">
             <div class="input-group-prepend">
               <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
@@ -30,7 +30,7 @@
 		</form>
 		<hr>
 		<p class="text-center">Don't have account ?
-		<a href="http://localhost:8080/Oni_chan_project/Source_Code/Users/Register" style="font-size: 14px;color: black;text-decoration: underline"> SIGN UP.</a></p>
+		<a href="http://localhost:8080/Oni_chan/User/Register" style="font-size: 14px;color: black;text-decoration: underline"> SIGN UP.</a></p>
       </article>
     </div>
   </div>

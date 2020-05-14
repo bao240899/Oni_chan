@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>NEXTAG | HOME PAGE</title>
     <!-- Bootstrap -->
-    <link href="./public/css/bootstrap-4.2.1.css" rel="stylesheet">
-	  <base href="./public/css/product-page.css" rel="stylesheet">
-    <base href="./public/css/Information-page.css" rel="stylesheet">
-    <base href="./public/css/register.css" rel="stylesheet">
+    <link href="/public/css/bootstrap-4.2.1.css" rel="stylesheet">
+	  <link href="/public/css/product-page.css" rel="stylesheet">
+    <link href="/public/css/Information-page.css" rel="stylesheet">
+    <link href="/public/css/register.css" rel="stylesheet">
 	  <link rel="Icon" href="./public/images/logo3.png">
 	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
