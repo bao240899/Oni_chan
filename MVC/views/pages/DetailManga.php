@@ -91,7 +91,7 @@ $lastChapter = mysqli_fetch_array($data["lastChapter"]);
 					while ($fields = mysqli_fetch_array($data["chapter"])) {
 					?>
 						<p>
-							<a href="http://localhost:8080/Oni_chan/manga/readchapter/<?= $fields["mangaID"] ?>/<?= $fields["chapterID"] ?>"><?= $fields["chapterName"] ?></a>
+						<a href="http://localhost:8080/Oni_chan/manga/readchapter/<?= $fields["mangaID"] ?>/<?= $fields["chapterID"] ?>"> <?= $fields["chapterName"] ?></a>
 						</p>
 					<?php
 					}

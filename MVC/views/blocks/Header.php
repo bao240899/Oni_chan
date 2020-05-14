@@ -12,8 +12,14 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="CateDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">LOUIS VUITTON</a>
-            <a class="dropdown-item" href="#">CALVIN KLEIN</a>
+            <a class="dropdown-item" href="http://localhost:8080/Oni_chan/Category/Action">Action</a>
+            <a class="dropdown-item" href="http://localhost:8080/Oni_chan/Category/Adult">Adult</a>
+            <a class="dropdown-item" href="http://localhost:8080/Oni_chan/Category/Adventure">Adventure</a>
+            <a class="dropdown-item" href="http://localhost:8080/Oni_chan/Category/Comedy">Comedy</a>
+            <a class="dropdown-item" href="http://localhost:8080/Oni_chan/Category/Drama">Drama</a>
+            <a class="dropdown-item" href="http://localhost:8080/Oni_chan/Category/Ecchi">Ecchi</a>
+            <a class="dropdown-item" href="http://localhost:8080/Oni_chan/Category/Horrow">Horrow</a>
+            <a class="dropdown-item" href="http://localhost:8080/Oni_chan/Category/Sci-fi">Sci-fi</a>
           </div>
         </li>
         <li class="nav-item">
@@ -52,7 +58,7 @@
                 </div>
               </span>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="http://localhost:8080/Oni_chan/user/account/<?= $_SESSION["userID"] ?>">Account</a>
+              <a class="dropdown-item" href="http://localhost:8080/Oni_chan/user/Account/<?= $_SESSION["userID"] ?>">Account</a>
               <a class="dropdown-item" href="http://localhost:8080/Oni_chan/user/follow/<?= $_SESSION["userID"] ?>">Follow</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="http://localhost:8080/Oni_chan/user/logout">Log Out</a>

@@ -7,7 +7,7 @@
     <title>NEXTAG | HOME PAGE</title>
     <!-- Bootstrap -->
 	  <link rel="Icon" href="images/Logo.png">
-    <link href="../Public/css/bootstrap-4.2.1.css" rel="stylesheet">
+    <link href="http://localhost:8080/Oni_chan/Public/css/bootstrap-4.2.1.css" rel="stylesheet">
 	  <link href="" rel="stylesheet">
 	  <link rel="Icon" href="/images/logo3.png">  
 	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -18,9 +18,9 @@
 	  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
     <script src="https://kit.fontawesome.com/yourcode.js"></script>
   <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="../Public/plugins/fontawesome-free/css/all.min.css" type="text/css">
+  <link rel="stylesheet" href="http://localhost:8080/Oni_chan/Public/plugins/fontawesome-free/css/all.min.css" type="text/css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="../Public/dist/css/adminlte.min.css" type="text/css">
+  <link rel="stylesheet" href="http://localhost:8080/Oni_chan/Public/dist/css/adminlte.min.css" type="text/css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
@@ -28,10 +28,10 @@
   </head>
   <body class="hold-transition sidebar-mini">
     <div class="wrapper">
-          <!--Header-->
-          <?php require_once "./mvc/views/blocks/Header_admin.php" ?>
           <!--Right-sidebar-->
           <?php require_once "./mvc/views/blocks/admin_right_sidebar.php" ?>
+          <!--Header-->
+          <?php require_once "./mvc/views/blocks/Header_admin.php" ?>
           <!--Content-->
           <div class="content-wrapper">
           <?php require_once "./mvc/views/pages/".$data["Page"].".php" ?>
@@ -40,8 +40,8 @@
   </body>
 
   <!-- jQuery -->
-<script src="../Public/plugins/jquery/jquery.min.js"></script>
+<script src="http://localhost:8080/Oni_chan/Public/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
-<script src="../Public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="http://localhost:8080/Oni_chan/Public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
-<script src="../Public/dist/js/adminlte.min.js"></script>
+<script src="http://localhost:8080/Oni_chan/Public/dist/js/adminlte.min.js"></script>

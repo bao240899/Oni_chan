@@ -1,7 +1,6 @@
-
-<section name="user-sidebar clearfix">
-	<div class="user-info clearfix">
-	<div class="container">
+<div class="container border p-2 ">
+	<div class="user-info ">
+	
 		<figure>
 		<div class="media">
 			<img src="https://www.upsieutoc.com/images/2020/05/14/17004.png" 
@@ -13,18 +12,18 @@
 		</div>
 		</figure>
 	</div>
-	</div>
-</section>
+</div>
+<br>
 <nav class="user-sidelink clearfix bg-light navbar-dark text-secondary" >
     <ul class="nav nav-tabs flex-column ">
 		<li class="nav-item">
-			<a class="nav-link" href="#"><i class="fas fa-tachometer-alt"></i> General</a>
+			<a class="nav-link" href="http://localhost:8080/Oni_chan/user/Account/<?= $_SESSION['userID'] ?>"><i class="fas fa-tachometer-alt"></i> General</a>
 		</li>
 		<li class="nav-item">
 			<a class="nav-link" href="#"><i class="fas fa-user-edit"></i> Edit Infomation</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="localhost:8080/Oni_chan/user/follow/abc@gmail.com"><i class="fas fa-heart"></i> Follow</a>
+			<a class="nav-link" href="http://localhost:8080/Oni_chan/user/follow/<?= $_SESSION["userID"] ?>"><i class="fas fa-heart"></i> Follow</a>
 		</li>
 		<li class="nav-item">
 			<a class="nav-link" href="#"><i class="fas fa-comment"></i> Comment</a>

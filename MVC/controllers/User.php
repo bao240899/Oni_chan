@@ -83,14 +83,18 @@ class User extends Controller
         }
     }
 
-    function account($userID){
-        
+    function Account($userID){
+        $this->view("DetailUser",[
+            "Page"  => "General",
+            "Manga" => $this->UserModel->follow($userID),
+            "Info"  => $this->UserModel->getUserByUserID($userID)
+        ]);
     }
     
     function Follow($userID)
     {
         $this->view("DetailUser", [
-            "Page" => "Follow",
+            "Page"  => "Follow",
             "Manga" => $this->UserModel->follow($userID)
         ]);
     }
