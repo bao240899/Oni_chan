@@ -23,7 +23,6 @@
   <link rel="stylesheet" href="http://localhost:8080/Oni_chan/Public/dist/css/adminlte.min.css" type="text/css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-
 	
   </head>
   <body class="hold-transition sidebar-mini">
@@ -38,9 +37,6 @@
           </div>
     </div>
   </body>
-
-  <!-- jQuery -->
-<script src="http://localhost:8080/Oni_chan/Public/plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
 <script src="http://localhost:8080/Oni_chan/Public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->

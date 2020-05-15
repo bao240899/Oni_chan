@@ -19,18 +19,14 @@
             <a class="dropdown-item" href="http://localhost:8080/Oni_chan/Category/Drama">Drama</a>
             <a class="dropdown-item" href="http://localhost:8080/Oni_chan/Category/Ecchi">Ecchi</a>
             <a class="dropdown-item" href="http://localhost:8080/Oni_chan/Category/Horrow">Horrow</a>
-            <a class="dropdown-item" href="http://localhost:8080/Oni_chan/Category/Sci-fi">Sci-fi</a>
+            <a class="dropdown-item" href="http://localhost:8080/Oni_chan/Category/Sci_fi">Sci-fi</a>
           </div>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Group</a>
         </li>
         <li class="nav-item">
-<<<<<<< HEAD
           <a class="nav-link" href="http://localhost:8080/Oni_chan/home/contactus">About Us</a>
-=======
-          <a class="nav-link" href="http://localhost:8080/Oni_chan/Home/ContactUs">About Us</a>
->>>>>>> efa29416186f522acaa5aeeb16890c51328306a8
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
