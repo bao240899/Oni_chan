@@ -20,7 +20,8 @@ class Home extends Controller
     {
         $this->view("master", [
             "Page" => "Home",
-            "Manga" => $this->mangaModel->GetManga()
+            "Manga" => $this->mangaModel->GetManga(),
+            "toplist"=>$this->mangaModel->Toplist()
         ]);
     }
     function ContactUs()
