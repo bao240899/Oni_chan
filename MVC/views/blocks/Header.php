@@ -20,7 +20,7 @@
           <a class="nav-link" href="#">Group</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="ContactUs">About Us</a>
+          <a class="nav-link" href="http://localhost:8080/Oni_chan/home/contactus">About Us</a>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
