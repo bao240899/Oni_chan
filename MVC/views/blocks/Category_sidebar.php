@@ -4,20 +4,20 @@
 		<div class="card-body">
             <table class="table">
                 <tr>
-                    <td><a href="../Category/Action">Action</a></td>
-                    <td><a href="#">Adult</a></td>
+                    <td><a href="http://localhost:8080/Oni_chan/Category/Action">Action</a></td>
+                    <td><a href="http://localhost:8080/Oni_chan/Category/Adult">Adult</a></td>
                 </tr>
                 <tr>
-                    <td><a href="#">Adventure</a></td>
-                    <td><a href="#">Comedy</a></td>
+                    <td><a href="http://localhost:8080/Oni_chan/Category/Adventure">Adventure</a></td>
+                    <td><a href="http://localhost:8080/Oni_chan/Category/Comedy">Comedy</a></td>
                 </tr>
                 <tr>
-                    <td><a href="#">Drama</a></td>
-                    <td><a href="#">Ecchi</a></td>
+                    <td><a href="http://localhost:8080/Oni_chan/Category/Drama">Drama</a></td>
+                    <td><a href="http://localhost:8080/Oni_chan/Category/Ecchi">Ecchi</a></td>
                 </tr>
                 <tr>
-                    <td><a href="#">Horrow</a></td>
-                    <td><a href="#">Sci-fi</a></td>
+                    <td><a href="http://localhost:8080/Oni_chan/Category/Horrow">Horrow</a></td>
+                    <td><a href="http://localhost:8080/Oni_chan/Category/Sci_fi">Sci-fi</a></td>
                 </tr>
             </table>
 		</div>

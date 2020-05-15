@@ -12,7 +12,7 @@ $lastChapter = mysqli_fetch_array($data["lastChapter"]);
 	<div class="row">
 		<div class="col-md-8 col-sm-12">
 			<!-- Title of product-->
-			<div class="title-of-product"><?= $fields[1] ?></div><br>
+			<div class="title-of-product text-center"><?= $fields[1] ?></div><br>
 			<div class="lastUpdate"></div>
 
 
@@ -102,23 +102,7 @@ $lastChapter = mysqli_fetch_array($data["lastChapter"]);
 			</div>
 		</div>
 		<div class="col-md-4 col-sm-0">
-			<div class="card bg-light mx-auto">
-				<h3 class="text-center card-header">Billboard</h3>
-				<a href="#">
-					<div class="card">
-						<div class="card-body">
-							<p class="card-text">Some example text. Some example text.</p>
-						</div>
-					</div>
-				</a>
-				<a href="#">
-					<div class="card">
-						<div class="card-body">
-							<p class="card-text">Some example text. Some example text.</p>
-						</div>
-					</div>
-				</a>
-			</div>
+			<?php require_once "./mvc/views/blocks/Right_sidebar.php" ?>
 		</div>
 	</div>
 </div>

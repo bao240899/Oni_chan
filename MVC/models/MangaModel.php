@@ -34,5 +34,10 @@ class MangaModel extends DB{
         }
         return json_encode($result);
     }
+
+    public function Toplist(){
+        $qr = "SELECT * FROM manga WHERE mangaID BETWEEN 1 AND 5";
+        return mysqli_query($this->con, $qr);
+    }
 }
 ?>

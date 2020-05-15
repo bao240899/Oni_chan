@@ -7,15 +7,6 @@
 	color: rgba(100,100,100,1.00);
 }
 
-.sidebar
-{
-	background-color: rgba(246,246,246,1.00);
-	height: 400px;
-	width: 180px;
-	padding-left: 3%;
-	padding-right: 3%;
-	padding-top: 12px;
-}
 
 .list-women-product a
 {
@@ -32,17 +23,10 @@
 
 .card-title
 {
-	padding-top: 50px ;
-	font-size: 60px;
-	color: rgba(146,146,146,1.00);
+	padding: 4px;
+	font-size: 15px;
 }
 
-
-.price
-{
-	font-size: 18px;
-	color: rgba(146,146,146,1.00);
-}
 
 .card-img-top-1
 {

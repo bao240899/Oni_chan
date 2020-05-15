@@ -24,7 +24,8 @@ class Manga extends controller
             "chapter"=>$this->chapterModel->getChapterByMangaID($mangaID),
             "firstChapter"=>$this->chapterModel->getFirstChapter($mangaID),
             "lastChapter"=>$this->chapterModel->getLastChapter($mangaID),
-            "checkFollow"=>$this->followModel->checkFollow($_SESSION["userID"],$mangaID)
+            "checkFollow"=>$this->followModel->checkFollow($_SESSION["userID"],$mangaID),
+            "toplist"=>$this->mangaModel->Toplist()
         ]);
     }
     static function readChapter($mangaID, $chapterID)

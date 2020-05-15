@@ -47,27 +47,20 @@
             while ($row = mysqli_fetch_assoc($data["Manga"])){
         ?>
           <div class="col-md-3 pb-1 pb-md-0 p-3">
-            <a href="manga/detailmanga/<?=$row["mangaID"]?>"><div class="card">
-              <img class="card-img-top" src="<?= $row["coverImage"]?>" style="width:160px;height:230px" alt="image">
-              <p class="card-title"><?= $row["mangaName"]?></p>
-          </div></a>
+            <a href="manga/detailmanga/<?=$row["mangaID"]?>" class="text-decoration-none">
+              <div class="card">
+              <img class="card-img-top" src="<?= $row["coverImage"]?>" style="width:160px;height:230px" alt="image">  
+              </div>
+              <span class="card-title"><?= $row["mangaName"]?></span>
+            </a>
         </div>
         <?php
               }
         ?>
-    </div>
+    </div></div>
     <div class="col-lg-4">
-        <br>
-        <div class="col-12 card bg-light mx-auto">
-          <h3 class="text-center card-header">Billboard</h3>
-          <a>
-          <div class="card">
-            <div class="card-body">
-              <p class="card-text">Some example text. Some example text.</p>
-            </div>
-          </div>
-          </a>
-        </div>
-		</div>
+      <br><?php require_once "./mvc/views/blocks/Right_sidebar.php" ?>
+    </div>
+	</div>
 </div>
 
