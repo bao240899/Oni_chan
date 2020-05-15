@@ -12,15 +12,25 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="CateDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">LOUIS VUITTON</a>
-            <a class="dropdown-item" href="#">CALVIN KLEIN</a>
+            <a class="dropdown-item" href="http://localhost:8080/Oni_chan/Category/Action">Action</a>
+            <a class="dropdown-item" href="http://localhost:8080/Oni_chan/Category/Adult">Adult</a>
+            <a class="dropdown-item" href="http://localhost:8080/Oni_chan/Category/Adventure">Adventure</a>
+            <a class="dropdown-item" href="http://localhost:8080/Oni_chan/Category/Comedy">Comedy</a>
+            <a class="dropdown-item" href="http://localhost:8080/Oni_chan/Category/Drama">Drama</a>
+            <a class="dropdown-item" href="http://localhost:8080/Oni_chan/Category/Ecchi">Ecchi</a>
+            <a class="dropdown-item" href="http://localhost:8080/Oni_chan/Category/Horrow">Horrow</a>
+            <a class="dropdown-item" href="http://localhost:8080/Oni_chan/Category/Sci-fi">Sci-fi</a>
           </div>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Group</a>
         </li>
         <li class="nav-item">
+<<<<<<< HEAD
           <a class="nav-link" href="http://localhost:8080/Oni_chan/home/contactus">About Us</a>
+=======
+          <a class="nav-link" href="http://localhost:8080/Oni_chan/Home/ContactUs">About Us</a>
+>>>>>>> efa29416186f522acaa5aeeb16890c51328306a8
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
@@ -29,20 +39,30 @@
       </form>
 
       <ul class="navbar-nav">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="Memberdrop" data-toggle="dropdown">
-            <i class="fas fa-user"></i> Member
-          </a>
-          <div class="dropdown-menu">
-            <?php
-            if (!isset($_SESSION["userID"]) || $_SESSION["userID"] == "somebody") {
-            ?>
-              <a class="dropdown-item" href="http://localhost:8080/Oni_chan/user/login">login to follow</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="http://localhost:8080/Oni_chan/user/login">Log in</a>
+      <?php
+        if (!isset($_SESSION["userID"]) || $_SESSION["userID"] == "somebody") {
+      ?>
+        <a class="nav-link" href="http://localhost:8080/Oni_chan/user/login" role="button">Login/Register</a>
             <?php
             } else { ?>
-              <a class="dropdown-item" href="#">Account</a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="Memberdrop" data-toggle="dropdown">
+                  <i class="fas fa-user"></i> Member
+                </a>
+                <div class="dropdown-menu">
+              <span class="dropdown-item-text">
+                <div class="user-info clearfix">
+                  <div class="media">
+                    <img src="https://www.upsieutoc.com/images/2020/05/14/17004.png" 
+                    class="align-self-center mr-3"  width="30" height="30">
+                    <div class="media-body">
+                      <?php echo $_SESSION['userID'] ?>
+                    </div>
+                  </div>
+                </div>
+              </span>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="http://localhost:8080/Oni_chan/user/Account/<?= $_SESSION["userID"] ?>">Account</a>
               <a class="dropdown-item" href="http://localhost:8080/Oni_chan/user/follow/<?= $_SESSION["userID"] ?>">Follow</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="http://localhost:8080/Oni_chan/user/logout">Log Out</a>

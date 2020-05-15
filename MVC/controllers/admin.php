@@ -14,7 +14,9 @@ class admin extends Controller
     }
     ///////////////////////////////////
     public function index(){
-        
+        $this->view("adminpage", [
+            "Page" => "Index-admin"
+        ]); 
     }
     ///////////////// admin Manga /////////////////
     function getmanga()
@@ -97,7 +99,7 @@ class admin extends Controller
             $lastChapter=$_POST["lastChapter"];
         }
         $this->chapterModel->addchapter($chapterID,$chapterName,$mangaID,$content,$view,$lastUpdate,$lastChapter);
-        header("location:./GetChapter/$mangaID");
+        header("location:http://localhost:8080/Oni_chan/admin/GetChapter/$mangaID");
     }
     function editchapter($chapterID)
     {
@@ -124,7 +126,7 @@ class admin extends Controller
     }
     function deleteChapter($mangaID,$chapterID){
         $this->chapterModel->deleteChapter($chapterID);
-        header("location:http://localhost:8080/Oni_chan_project/Source_Code/admin/GetChapter/$mangaID");
+        header("location:http://localhost:8080/Oni_chan/admin/GetChapter/$mangaID");
     }
     //////////////////////////admin comment///////////////////////////
     function getcomment()
@@ -136,7 +138,7 @@ class admin extends Controller
     }
     function deleteComment($commentID){
         $this->commentModel->deleteComment($commentID);
-        header("location:http://localhost:8080/Oni_chan_project/Source_Code/admin/getcomment");
+        header("location:http://localhost:8080/Oni_chan/admin/getcomment");
     }
     /////////////////////////// admin user/////////////////////////////
     function getuser()

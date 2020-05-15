@@ -22,15 +22,15 @@
   <body>
   <div class="container">
       <!--Header-->
-      <?php require_once "./mvc/views/blocks/Header.php" ?>
+      <?php require_once "./mvc/views/blocks/Header.php" ?><br>
     <div class="row">
-        <div class="col-md-3 col-sm-4">
-            <!--User sidebar-->
-            <?php require_once "./mvc/views/blocks/User_sidebar.php" ?>
-        </div>
-        <div class="col-md-9 col-sm-8">
+        <div class="col-md-8 col-sm-9">
             <!--Content-->
             <?php require_once "./mvc/views/pages/".$data["Page"].".php" ?><br>
+        </div>
+        <div class="col-md-4 col-sm-3">
+            <!--User sidebar-->
+            <br><?php require_once "./mvc/views/blocks/Category_sidebar.php" ?>
         </div>
       <!--Footer-->
       <?php require_once "./mvc/views/blocks/Footer.php"?>

@@ -1,7 +1,7 @@
 <div class="container">
     <div class="card bg-light">
       <article class="card-body mx-auto" style="max-width: 600px;">
-        <h4 class="card-title mt-3 text-center">Create Account</h4>
+        <h4 class="mt-3 text-center">Create Account</h4><hr>
         <p class="text-center">Get started with your free account</p>
         <p>
           <a href="#" class="btn btn-block btn-outline-secondary btn-twitter"> <i class="fab fa-twitter"></i>   Login via Twitter</a>
