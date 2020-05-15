@@ -18,7 +18,7 @@ class admin extends Controller
             "Page" => "Index-admin"
         ]); 
     }
-    ///////////////// admin Manga /////////////////
+    ///////////////// admin Manga //////////////aa///
     function getmanga()
     {
         $this->view("adminpage", [
