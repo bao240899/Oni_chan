@@ -1,7 +1,7 @@
 <?php $fields = mysqli_fetch_array($data["User"]); ?>
 <div class="container">
          <h2>Modify User</h2>
-         <form method="POST" action="./editUserProcess" >
+         <form method="POST" action="http://localhost:8080/Oni_chan/admin/editUserProcess" >
              <div class="form-group">
                 <label>ID: </label>
                 <input type="text" class="form-control"  
@@ -39,9 +39,9 @@
         ?>
         <?php
           if($data["Result"] == True){
-            echo "Sign-Up Success";
+            echo "Modify Success";
           } else {
-            echo "Sign-Up Fail";
+            echo "Modify Fail";
           }
         ?>
         <?php

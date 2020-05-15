@@ -150,28 +150,25 @@ class admin extends Controller
     }
     function edituser($userID)
     {
-        // Call Models
-        $this->model("UserModel")->EditUser($userID);
-        //Call Views
         $this->view("adminpage", [
             "Page" => "EditUser",
-            "User" => $this->model("UserModel")->EditUser($userID)
+            "User" => $this->userModel->getUserByUserID($userID)
         ]);
     }
-    function edituserprocess()
+    function editUserProcess()
     {
         //Get Data from Form
-        if(isset($_POST["btnUpdate"])){
-            $userID = $_POST["UserID"];
-            $password = $_POST["Password"];
-            $username = $_POST["UserName"];
+        if(isset($_POST["btnUpdateUser"])){
+            $userID = $_POST["userID"];
+            $password = $_POST["password"];
+            $username = $_POST["userName"];
             $gender = $_POST["gender"];
-            //Insert Data to DB
-            $result = $this->userModel->EditUserprocess($userID,$password,$username,$gender);
-            //Show notification
-            $this->view("admin",[
-                "Page"=>"EditUser",
-                "Result"=> $result
+            $avatar=$_POST["avatar"];
+            $result=$this->userModel->edituser($userID,$password,$username,$avatar,$gender);
+            $this->view("adminpage", [
+                "Page" => "EditUser",
+                "User" => $this->userModel->getUserByUserID($userID),
+                "Result"=>$result
             ]);            
         }
     }

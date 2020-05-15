@@ -26,11 +26,7 @@
           <a class="nav-link" href="#">Group</a>
         </li>
         <li class="nav-item">
-<<<<<<< HEAD
-          <a class="nav-link" href="http://localhost:8080/Oni_chan/home/contactus">About Us</a>
-=======
           <a class="nav-link" href="http://localhost:8080/Oni_chan/Home/ContactUs">About Us</a>
->>>>>>> efa29416186f522acaa5aeeb16890c51328306a8
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
