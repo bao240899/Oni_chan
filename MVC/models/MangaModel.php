@@ -4,8 +4,8 @@ class MangaModel extends DB{
         $qr = "SELECT * FROM manga";
         return mysqli_query($this->con, $qr);
     }
-    public function addManga($mangaID,$mangaName,$Author,$Artists,$CategoryID,$Description,$Cover){
-        $qr = "INSERT INTO `manga`(`mangaID`, `mangaName`, `author`, `artsits`, `categoryID`, `description`, `view`, `rate`, `coverImage`) VALUES ('$mangaID','$mangaName','$Author','$Artists','$CategoryID',',$Description',0,0,'$Cover')";
+    public function addManga($mangaName,$Author,$Artists,$CategoryID,$Description,$Cover){
+        $qr = "INSERT INTO `manga`(`mangaName`, `author`, `artsits`, `categoryID`, `description`, `view`, `rate`, `coverImage`) VALUES ('$mangaName','$Author','$Artists','$CategoryID','$Description',0,0,'$Cover')";
         $result= false;
         if(mysqli_query($this->con, $qr)){
             $result= true;

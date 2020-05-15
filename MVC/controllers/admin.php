@@ -35,7 +35,6 @@ class admin extends Controller
     function addMangaProcess()
     {
         if (isset($_POST["bntAddManga"])) {
-            $mangaID = $_POST["bookid"];
             $mangaName = $_POST["bookname"];
             $Author = $_POST["author"];
             $Artists = $_POST["artists"];
@@ -43,8 +42,8 @@ class admin extends Controller
             $Description = $_POST["description"];
             $Cover = $_POST["cover"];
         }
-        $this->mangaModel->addManga($mangaID, $mangaName, $Author, $Artists, $CategoryID, $Description, $Cover);
-        header("location:./getmanga");
+        $this->mangaModel->addManga($mangaName, $Author, $Artists, $CategoryID, $Description, $Cover);
+        header("location:http://localhost:8080/Oni_chan/admin/getmanga");
     }
     function editmanga($mangaID)
     {
@@ -90,7 +89,6 @@ class admin extends Controller
     }
     function addChapterProcess(){
         if(isset($_POST["bntAddChapter"])){
-            $chapterID=$_POST["chapterid"];
             $chapterName=$_POST["chaptername"];
             $mangaID=$_POST["bookid"];
             $content=$_POST["content"];
@@ -98,7 +96,7 @@ class admin extends Controller
             $lastUpdate=$_POST["lastUpdate"];
             $lastChapter=$_POST["lastChapter"];
         }
-        $this->chapterModel->addchapter($chapterID,$chapterName,$mangaID,$content,$view,$lastUpdate,$lastChapter);
+        $this->chapterModel->addchapter($chapterName,$mangaID,$content,$view,$lastUpdate,$lastChapter);
         header("location:http://localhost:8080/Oni_chan/admin/GetChapter/$mangaID");
     }
     function editchapter($chapterID)
