@@ -19,7 +19,7 @@
             <a class="dropdown-item" href="http://localhost:8080/Oni_chan/Category/Drama">Drama</a>
             <a class="dropdown-item" href="http://localhost:8080/Oni_chan/Category/Ecchi">Ecchi</a>
             <a class="dropdown-item" href="http://localhost:8080/Oni_chan/Category/Horrow">Horrow</a>
-            <a class="dropdown-item" href="http://localhost:8080/Oni_chan/Category/Sci-fi">Sci-fi</a>
+            <a class="dropdown-item" href="http://localhost:8080/Oni_chan/Category/Sci_fi">Sci-fi</a>
           </div>
         </li>
         <li class="nav-item">

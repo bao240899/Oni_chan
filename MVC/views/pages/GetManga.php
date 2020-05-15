@@ -24,10 +24,10 @@
                 <td><?= $fields[2] ?></td>
                 <td><?= $fields[3] ?></td>
                 <td><?= $fields[4] ?></td>
-                <td><?= $fields[5] ?></td>
+                <td><article><?= $fields[5] ?></article></td>
                 <td><?= $fields[6] ?></td>
                 <td><?= $fields[7] ?></td>
-                <td><?= $fields[8] ?></td>
+                <td><article><?= $fields[8] ?></article</td>
                 <td><a href="./getchapter/<?= $fields[0] ?>" class="btn btn btn-outline-secondary">chapter</a>
                     <br><br>
                     <a href="./addchapter/<?= $fields[0] ?>" class="btn btn btn-outline-secondary">add chapter</a>

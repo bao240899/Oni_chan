@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>NEXTAG | HOME PAGE</title>
     <!-- Bootstrap -->
-    <link href="../Public/css/bootstrap-4.2.1.css" rel="stylesheet">
-	  <link href="../Public/css/product-page.css" rel="stylesheet">
-    <link href="../Public/css/Information-page.css" rel="stylesheet">
-    <link href="../Public/css/register.css" rel="stylesheet">
+    <link href="http://localhost:8080/Oni_chan/Public/css/bootstrap-4.2.1.css" rel="stylesheet">
+	  <link href="http://localhost:8080/Oni_chan/Public/css/product-page.css" rel="stylesheet">
+    <link href="http://localhost:8080/Oni_chan/Public/css/Information-page.css" rel="stylesheet">
+    <link href="http://localhost:8080/Oni_chan/Public/css/register.css" rel="stylesheet">
 	<link rel="Icon" href="../Public/images/logo3.png">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

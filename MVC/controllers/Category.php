@@ -30,5 +30,54 @@
             "Name"  => "Adventure"
         ]);
     }
+
+    function Adult(){
+        $this->view("Categorymanga",[
+            "Page"=>"MangaCategory",
+            "Manga"=>$this->categoryModel->Adult(),
+            "Name"  => "Adult"
+        ]);
+    }
+
+    function Comedy(){
+        $this->view("Categorymanga",[
+            "Page"=>"MangaCategory",
+            "Manga"=>$this->categoryModel->Comedy(),
+            "Name"  => "Comedy"
+        ]);
+    }
+
+    function Drama(){
+        $this->view("Categorymanga",[
+            "Page"=>"MangaCategory",
+            "Manga"=>$this->categoryModel->Drama(),
+            "Name"  => "Drama"
+        ]);
+    }
+
+    function Ecchi(){
+        $this->view("Categorymanga",[
+            "Page"=>"MangaCategory",
+            "Manga"=>$this->categoryModel->Ecchi(),
+            "Name"  => "Ecchi"
+        ]);
+    }
+
+    function Horrow(){
+        $this->view("Categorymanga",[
+            "Page"=>"MangaCategory",
+            "Manga"=>$this->categoryModel->Horrow(),
+            "Name"  => "Horrow"
+        ]);
+    }
+
+    function Sci_fi(){
+        $this->view("Categorymanga",[
+            "Page"=>"MangaCategory",
+            "Manga"=>$this->categoryModel->Sci_fi(),
+            "Name"  => "Sci-fi"
+        ]);
+    }
+
  }
 ?>

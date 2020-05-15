@@ -49,7 +49,7 @@
           </div> <!-- form-group// -->
           <p class="text-center">Have an account? <a href="http://localhost:8080/Oni_chan_project/Source_Code/Users/Login" style="font-size: 14px;color: black;text-decoration: underline">SIGN IN</a> </p>
         </form>
-        <p class="text-center text-danger"> 
+        <p class="text-center text-success"> 
         <?php
           if(isset($data["Result"])){
         ?>

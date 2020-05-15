@@ -38,44 +38,36 @@
 		</div>
 <div class="container">
 	<div class="row">
-	<div class="col-lg-8 col-12">
-		<hr>
-    <h2 class="text-center">RECOMMENDED MANGA</h2>
-    <hr>
-      <div class="row text-center">
-      <?php 
-          while ($row = mysqli_fetch_assoc($data["Manga"])){
-      ?>
-        <div class="col-md-3 pb-1 pb-md-0">
-           <a href="manga/detailmanga/<?=$row["mangaID"]?>"><div class="card">
-            <img class="card-img-top" src="<?= $row["coverImage"]?>" alt="image">
-			   </div></a>
+	  <div class="col-lg-8 col-12">
+      <hr>
+      <h2 class="text-center">RECOMMENDED MANGA</h2>
+      <hr>
+        <div class="row text-center">
+        <?php 
+            while ($row = mysqli_fetch_assoc($data["Manga"])){
+        ?>
+          <div class="col-md-3 pb-1 pb-md-0 p-3">
+            <a href="manga/detailmanga/<?=$row["mangaID"]?>"><div class="card">
+              <img class="card-img-top" src="<?= $row["coverImage"]?>" style="width:160px;height:230px" alt="image">
+              <p class="card-title"><?= $row["mangaName"]?></p>
+          </div></a>
         </div>
-      <?php
-            }
-      ?>
-      </div>
-    <hr>
-    <h2 class="text-center">RECOMMENDED NOVEL </h2>
-    <hr>
-      <div class="row text-center">
-        <div class="col-md-3 pb-1 pb-md-0">
-          <a href="CALVIN KLEIN -TEXTURED CKJ LOGO BILLFOLD WALLET + CARD CASE.html"><div class="card">
-            <img class="card-img-top" src="" alt="">
-			  </div></a>
-        </div>
-      </div></div>
-		<br>
-    <hr>
-    <div class="col-lg-4 col-12">
-            <br><div class="col-12 card bg-light mx-auto">
-              <h3 class="text-center card-header">Billboard</h3>
-              <a><div class="card">
-				<div class="card-body">
-					<p class="card-text">Some example text. Some example text.</p>
-			    </div>
-			  </div></a>
+        <?php
+              }
+        ?>
+    </div>
+    <div class="col-lg-4">
+        <br>
+        <div class="col-12 card bg-light mx-auto">
+          <h3 class="text-center card-header">Billboard</h3>
+          <a>
+          <div class="card">
+            <div class="card-body">
+              <p class="card-text">Some example text. Some example text.</p>
             </div>
-		   </div>
-</div></div>
+          </div>
+          </a>
+        </div>
+		</div>
+</div>
 

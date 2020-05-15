@@ -51,12 +51,12 @@ $lastChapter = mysqli_fetch_array($data["lastChapter"]);
 						<?php
 						if (mysqli_num_rows($data["checkFollow"]) > 0) {
 						?>
-							<a href="http://localhost:8080/Oni_chan/user/unFollowProcess/<?= $_SESSION['userID'] ?>/<?= $fields['mangaID'] ?>">
+							<a href="http://localhost:8080/Oni_chan/User/unFollowProcess/<?= $_SESSION['userID'] ?>/<?= $fields['mangaID'] ?>">
 							<button class="btn btn-danger" name="follow"><i class="fas fa-ban"></i>  Unfollow</button></a>
 						<?php
 						} else {
 						?>
-							<a href="http://localhost:8080/Oni_chan/user/addFollowProcess/<?= $_SESSION['userID'] ?>/<?= $fields['mangaID'] ?>">
+							<a href="http://localhost:8080/Oni_chan/User/addFollowProcess/<?= $_SESSION['userID'] ?>/<?= $fields['mangaID'] ?>">
 							<button class="btn btn-success" name="follow"><i class="fas fa-heart"></i>  Follow</button></a>
 						<?php
 						}
@@ -91,7 +91,8 @@ $lastChapter = mysqli_fetch_array($data["lastChapter"]);
 					while ($fields = mysqli_fetch_array($data["chapter"])) {
 					?>
 						<p>
-						<a href="http://localhost:8080/Oni_chan/manga/readchapter/<?= $fields["mangaID"] ?>/<?= $fields["chapterID"] ?>"> <?= $fields["chapterName"] ?></a>
+						<a href="http://localhost:8080/Oni_chan/manga/readchapter/<?= $fields["mangaID"] ?>/<?= $fields["chapterID"] ?>">
+						 <?= $fields["chapterName"] ?></a>
 						</p>
 					<?php
 					}
@@ -103,7 +104,14 @@ $lastChapter = mysqli_fetch_array($data["lastChapter"]);
 		<div class="col-md-4 col-sm-0">
 			<div class="card bg-light mx-auto">
 				<h3 class="text-center card-header">Billboard</h3>
-				<a>
+				<a href="#">
+					<div class="card">
+						<div class="card-body">
+							<p class="card-text">Some example text. Some example text.</p>
+						</div>
+					</div>
+				</a>
+				<a href="#">
 					<div class="card">
 						<div class="card-body">
 							<p class="card-text">Some example text. Some example text.</p>
