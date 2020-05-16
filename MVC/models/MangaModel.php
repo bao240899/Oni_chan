@@ -36,7 +36,12 @@ class MangaModel extends DB{
     }
 
     public function Toplist(){
-        $qr = "SELECT * FROM manga WHERE mangaID BETWEEN 1 AND 5";
+        $qr = "SELECT * FROM manga ORDER BY manga.view DESC LIMIT 5 ";
+        return mysqli_query($this->con, $qr);
+    }
+
+    public function ToplistHome(){
+        $qr = "SELECT * FROM manga ORDER BY manga.view DESC LIMIT 8 ";
         return mysqli_query($this->con, $qr);
     }
 }

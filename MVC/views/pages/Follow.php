@@ -18,7 +18,6 @@
                         <td><img class="card-img-top" src="<?= $row["coverImage"]?>" alt="image" style="width:60px;height:95px"></td>
                         <td><?= $row["mangaName"] ?></td>
                         <td><?= $row["artsits"] ?></td>
-                        <td><?= $row["view"]?></td>
                         <td>                        
                             <a href="http://localhost:8080/Oni_chan/manga/detailmanga/<?= $row["mangaID"] ?>" 
                             class="btn btn-info">Read</a>
