@@ -45,7 +45,7 @@ $lastChapter = mysqli_fetch_array($data["lastChapter"]);
 					<?php
 					if (!isset($_SESSION["userID"]) || $_SESSION["userID"] == "somebody") {
 					?>
-						<a href="http://localhost:8080/Oni_chan/user/login"><button class="btn btn-info" name="follow"><i class="fas fa-heart"></i>Login to Follow</button></a>
+						<a href="http://localhost:8080/Oni_chan/user/login"><button class="btn btn-info" name="follow"></i>Login to Follow</button></a>
 					<?php
 					} else { ?>
 						<?php

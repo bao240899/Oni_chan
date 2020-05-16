@@ -11,7 +11,7 @@
                         </div>
                         <div class="float-left meta">
                             <div class="title h5">
-                                <a href="#"><b><?= $fields["userID"] ?></b></a>
+                                <a href="#"><b><?= $fields["userName"] ?></b></a>
                                 made a post.
                             </div>
                             <h6 class="text-muted time"><?= $fields["date"] ?></h6>

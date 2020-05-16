@@ -1,35 +1,28 @@
 @charset "utf-8";
+
 /* CSS Document */
 
-.panel-title a
-{
-	font-size: 18px;
-	color: rgba(100,100,100,1.00);
+.panel-title a {
+    font-size: 18px;
+    color: rgba(100, 100, 100, 1.00);
 }
 
-
-.list-women-product a
-{
-	font-size: 15px;
-	color: rgba(146,146,146,1.00);
+.list-women-product a {
+    font-size: 15px;
+    color: rgba(146, 146, 146, 1.00);
 }
 
-.list-men-product a
-{
-	font-size: 15px;
-	color: rgba(146,146,146,1.00);
+.list-men-product a {
+    font-size: 15px;
+    color: rgba(146, 146, 146, 1.00);
 }
 
-
-.card-title
-{
-	padding: 4px;
-	font-size: 15px;
+.card-title {
+    padding: 4px;
+    font-size: 15px;
 }
 
-
-.card-img-top-1
-{
-	height: 200px;
-	width: 270px;
+.card-img-top-1 {
+    height: 200px;
+    width: 270px;
 }

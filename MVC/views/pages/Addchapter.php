@@ -4,13 +4,7 @@
       <article class="card-body mx-auto" style="max-width: 600px;">
         <h4 class="card-title mt-3 text-center">Add Chapter</h4>
         <hr>
-        <form method="POST" action="../addChapterProcess">
-          <div class="form-group input-group mt-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text"> Chapter's ID : </span>
-            </div>
-            <input name="chapterid" class="form-control" type="text">
-            </div> <!-- form-group// -->
+        <form method="POST" action="http://localhost:8080/Oni_chan/admin/addChapterProcess">
 
             <div class="form-group input-group">
             <div class="input-group-prepend">

@@ -5,13 +5,7 @@
       <article class="card-body mx-auto" style="max-width: 600px;">
         <h4 class="card-title mt-3 text-center">Add Manga/Novel</h4>
         <hr>
-        <form method="POST" action="./addMangaProcess">
-          <div class="form-group input-group mt-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text"> Book's ID : </span>
-            </div>
-            <input name="bookid" class="form-control" type="text">
-          </div> <!-- form-group// -->
+        <form method="POST" action="http://localhost:8080/Oni_chan/admin/addMangaProcess">
           <div class="form-group input-group">
             <div class="input-group-prepend">
               <span class="input-group-text"> Book's Name : </span>

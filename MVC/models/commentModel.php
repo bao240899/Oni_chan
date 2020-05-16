@@ -1,7 +1,11 @@
 <?php
 class commentModel extends DB{
     public function getAllCommentbyManga($mangaID){
-        $qr = "SELECT * from comment where mangaID='$mangaID'";
+        $qr = "SELECT * 
+        FROM user 
+        INNER JOIN comment 
+        WHERE user.userID = comment.userID 
+        AND comment.mangaID = '$mangaID'";
         return mysqli_query($this->con, $qr);
     }
     public function getComment(){

@@ -24,8 +24,8 @@ class chapterModel extends DB{
         $qr = "SELECT * FROM chapter WHERE mangaID='$mangaID' ORDER BY lastChapter DESC LIMIT 1";
         return mysqli_query($this->con, $qr);
     }
-    public function addChapter($chapterID,$chapterName,$mangaID,$content,$view,$lastUpdate,$lastChapter){
-        $qr = " INSERT INTO `chapter`(`chapterID`, `chapterName`, `mangaID`, `content`, `view`, `lastUpdate`, `lastChapter`) VALUES ('$chapterID','$chapterName','$mangaID','$content','$view','$lastUpdate','$lastChapter')";
+    public function addChapter($chapterName,$mangaID,$content,$view,$lastUpdate,$lastChapter){
+        $qr = " INSERT INTO `chapter`( `chapterName`, `mangaID`, `content`, `view`, `lastUpdate`, `lastChapter`) VALUES ('$chapterName','$mangaID','$content','$view','$lastUpdate','$lastChapter')";
         return mysqli_query($this->con, $qr);
     }
     public function editChapter($chapterID,$chapterName,$mangaID,$content,$view,$lastUpdate,$lastChapter){
