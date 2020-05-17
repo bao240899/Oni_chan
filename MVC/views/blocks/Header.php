@@ -23,7 +23,7 @@
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Group</a>
+          <a class="nav-link" href="https://www.facebook.com/PlayAndCodeGame/">Group</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="http://localhost:8080/Oni_chan/Home/ContactUs">About Us</a>

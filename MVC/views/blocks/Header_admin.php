@@ -28,7 +28,7 @@
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link" href="#" role="button">
+        <a class="nav-link" href="http://localhost:8080/Oni_chan/adminLogin/logout" role="button">
 			<h3><i class="fas fa-sign-out-alt"></i></h3>
 		</a>
       </li>
