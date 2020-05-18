@@ -76,6 +76,16 @@ class User extends Controller
             "User" => $user->GetUser()
         ]);
     }
+    public function editUserByUser($userID)
+    {
+        if($_SESSION["userID"]=="somebody"||!isset($_SESSION["userID"])){
+            header("location:http://localhost:8080/Oni_chan/user/login");
+        }
+        $this->view("DetailUser", [
+            "Page" => "EditUserByUser",
+            "user"=>$this->UserModel->getUserByUserID($userID)
+        ]);
+    }
 
     public function EditUser()
     {
@@ -87,7 +97,10 @@ class User extends Controller
             $password = $_POST["password"];
             $username = $_POST["UserName"];
             $gender = $_POST["gender"];
-            $result = $this->UserModel->EditUserprocess($userID, $password, $username, $gender);
+            $avatar = $_POST["avatar"];
+            $result = $this->UserModel->EditUser($userID, $password, $username,$avatar, $gender);
+            
+            header("location:http://localhost:8080/Oni_chan/user/editUserByUser/$userID");
         }
     }
 
@@ -142,5 +155,15 @@ class User extends Controller
         }
         $this->followModel->unFollow($userID,$mangaID);
         header("location:http://localhost:8080/Oni_chan/manga/detailmanga/$mangaID");
+    }
+    function password($userID)
+    {
+        if($_SESSION["userID"]=="somebody"||!isset($_SESSION["userID"])){
+            header("location:http://localhost:8080/Oni_chan/user/login");
+        }
+        $this->view("DetailUser", [
+            "Page" => "userPassword",
+            "user"=>$this->UserModel->getUserByUserID($userID)
+        ]);
     }
 }

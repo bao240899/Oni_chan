@@ -20,7 +20,7 @@
 			<a class="nav-link" href="http://localhost:8080/Oni_chan/user/Account/<?= $_SESSION['userID'] ?>"><i class="fas fa-tachometer-alt"></i> General</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="#"><i class="fas fa-user-edit"></i> Edit Infomation</a>
+			<a class="nav-link" href="http://localhost:8080/Oni_chan/user/editUserByUser/<?= $_SESSION['userID'] ?>"><i class="fas fa-user-edit"></i> Edit Infomation</a>
 		</li>
 		<li class="nav-item">
 			<a class="nav-link" href="http://localhost:8080/Oni_chan/user/follow/<?= $_SESSION["userID"] ?>"><i class="fas fa-heart"></i> Follow</a>
@@ -29,10 +29,10 @@
 			<a class="nav-link" href="http://localhost:8080/Oni_chan/user/comment/<?= $_SESSION["userID"] ?>"><i class="fas fa-comment"></i> Comment</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="#"><i class="fas fa-lock"></i> Password</a>
+			<a class="nav-link" href="http://localhost:8080/Oni_chan/user/password/<?= $_SESSION["userID"] ?>"><i class="fas fa-lock"></i> Password</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+			<a class="nav-link" href="http://localhost:8080/Oni_chan/user/logout"><i class="fas fa-sign-out-alt"></i> Log Out</a>
 		</li>
 	</ul>
 </nav>
