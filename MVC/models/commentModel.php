@@ -8,6 +8,14 @@ class commentModel extends DB{
         AND comment.mangaID = '$mangaID'";
         return mysqli_query($this->con, $qr);
     }
+    public function getCommentByUserID($userID){
+        $qr = "SELECT * 
+        FROM comment 
+        INNER JOIN manga
+        WHERE comment.userID = '$userID' 
+        AND comment.mangaID = manga.mangaID";
+        return mysqli_query($this->con, $qr);
+    }
     public function getComment(){
         $qr = "SELECT * from comment";
         return mysqli_query($this->con, $qr);
