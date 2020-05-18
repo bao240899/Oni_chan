@@ -44,5 +44,11 @@ class MangaModel extends DB{
         $qr = "SELECT * FROM manga ORDER BY manga.view DESC LIMIT 8 ";
         return mysqli_query($this->con, $qr);
     }
+    public function getMangaToPage($item_per_page,$offset){
+        $qr = "SELECT * FROM `manga` ORDER BY `mangaID` ASC  LIMIT " . $item_per_page . " OFFSET " . $offset;
+        
+        return mysqli_query($this->con, $qr);
+        
+    }
 }
 ?>

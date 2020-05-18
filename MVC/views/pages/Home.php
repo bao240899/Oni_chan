@@ -44,7 +44,7 @@
       <hr>
         <div class="row text-center">
         <?php 
-            while ($row = mysqli_fetch_assoc($data["Manga"])){
+            while ($row = mysqli_fetch_assoc($data["MangaPage"])){
         ?>
           <div class="col-md-3 pb-1 pb-md-0 p-3">
             <a href="manga/detailmanga/<?=$row["mangaID"]?>" class="text-decoration-none">
@@ -58,9 +58,15 @@
               }
         ?>
     </div></div>
+    
     <div class="col-lg-4">
       <br><?php require_once "./mvc/views/blocks/Right_sidebar.php" ?>
     </div>
 	</div>
+  <div class="clear-both"></div>
+    <div><?php  
+        require "./mvc/views/pages/pagination.php";
+        ?>
+        </div>
 </div>
 
