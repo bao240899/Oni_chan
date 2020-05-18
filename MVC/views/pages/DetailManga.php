@@ -23,7 +23,7 @@ $lastChapter = mysqli_fetch_array($data["lastChapter"]);
 				</div>
 				<!-- Detail of Manga-->
 				<div class="col-lg-7 col-sm-0">
-					<table>
+					<table id="tabDetail">
 						<tr>
 							<td><i class="far fa-user"></i> Author :</td>
 							<td><?= $fields["author"] ?></td>

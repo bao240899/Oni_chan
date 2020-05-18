@@ -9,10 +9,11 @@
 							<?php 
 								$i++;
 							?>
-							<td><p class="text-center"><?php echo($i)?></p><td>
+							<td><p class="text-center">0<?php echo($i)?></p><td>
 							<td><img src="<?= $toplist["coverImage"] ?>" alt="<?= $toplist["mangaName"] ?>"
-									style="width:30px;height:47px" ></td>
-							<td> <a href="#" class="text-decoration-none"> <?= $toplist["mangaName"] ?></a></td>
+									style="width:30px;height:47px;" ></td>
+							<td> <a href="http://localhost:8080/Oni_chan/manga/detailmanga/<?= $toplist["mangaID"] ?>" 
+							class="text-decoration-none card-title"> <?= $toplist["mangaName"] ?></a></td>
 						</tr>
 				<?php
 					}

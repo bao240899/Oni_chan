@@ -3,7 +3,7 @@
 
 .title-information-page a
 {
-	font-size: 13px;
+	font-size: 15px;
 	color: rgba(100,100,100,1.00);
 }
 
@@ -21,10 +21,6 @@
 	font-weight: 500;
 }
 
-.Price
-{
-	font-size: 25px;
-}
 
 .add-to-bag
 {
@@ -49,6 +45,12 @@
 	color: rgba(100,100,100,1.00);
 	text-decoration: none;
 	
+}
+
+table ,th #tabDetail {
+	width: 60%;
+	color :  rgba(100,100,100,1.00);
+	padding : 15px; 
 }
 
 .title-contact-us

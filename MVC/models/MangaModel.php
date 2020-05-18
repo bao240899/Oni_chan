@@ -4,6 +4,12 @@ class MangaModel extends DB{
         $qr = "SELECT * FROM manga";
         return mysqli_query($this->con, $qr);
     }
+
+    public function SearchManga($keyword){
+        $qr = "SELECT * FROM `manga` WHERE mangaName = '$keyword' ";
+        return mysqli_query($this->con, $qr);
+
+    }
     public function addManga($mangaName,$Author,$Artists,$CategoryID,$Description,$Cover){
         $qr = "INSERT INTO `manga`(`mangaName`, `author`, `artsits`, `categoryID`, `description`, `view`, `rate`, `coverImage`) VALUES ('$mangaName','$Author','$Artists','$CategoryID','$Description',0,0,'$Cover')";
         $result= false;

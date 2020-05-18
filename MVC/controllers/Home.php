@@ -5,6 +5,7 @@ class Home extends Controller
     public $commentModel;
     public $UserModel;
     public $chapterModel;
+    public $categoryModel;
 
     function __construct()
     {
@@ -15,6 +16,7 @@ class Home extends Controller
         $this->commentModel = $this->model("CommentModel");
         $this->UserModel = $this->model("UserModel");
         $this->chapterModel = $this->model("ChapterModel");
+        $this->categoryModel = $this->model("categoryModel");
     }
     function Master()
     {
@@ -28,6 +30,17 @@ class Home extends Controller
     {
         $this->view("master", [
             "Page" => "Contact"
+        ]);
+    }
+
+    public function Search(){
+        if( isset($_POST["btnSearch"])){
+            $keyword = $_POST["search"];
+        }
+        
+        $this->view("Categorymanga",[
+            "Page"=>"Search-page",
+            "Manga"=>$this->mangaModel->SearchManga($keyword),
         ]);
     }
 }

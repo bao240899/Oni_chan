@@ -15,6 +15,14 @@
 
     }
 
+    function Allcategory(){
+        $this->view("Categorymanga",[
+            "Page"  =>"MangaCategory",
+            "Manga" =>$this->categoryModel->Allcategory(),
+            "Name"  => ""
+        ]);
+    }
+
     function Action(){
         $this->view("Categorymanga",[
             "Page"  =>"MangaCategory",

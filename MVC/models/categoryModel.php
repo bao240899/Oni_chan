@@ -1,5 +1,10 @@
 <?php
     class CategoryModel extends DB{
+        public function Allcategory(){
+            $query = "SELECT * FROM manga";
+            return mysqli_query($this->con, $query);
+        }
+
         public function Action(){
             $query = "SELECT * FROM `manga` 
                         INNER JOIN category 

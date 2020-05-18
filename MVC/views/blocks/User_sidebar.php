@@ -1,8 +1,8 @@
-<div class="container border p-2 ">
+<br><div class="container p-2 jumbotron ">
 	<div class="user-info ">
 	
 		<figure>
-		<div class="media">
+		<div class="media ">
 			<img src="https://www.upsieutoc.com/images/2020/05/14/17004.png" 
 			class="align-self-center mr-3"  width="50" height="50">
 			<div class="media-body">
@@ -13,7 +13,6 @@
 		</figure>
 	</div>
 </div>
-<br>
 <nav class="user-sidelink clearfix bg-light navbar-dark text-secondary" >
     <ul class="nav nav-tabs flex-column ">
 		<li class="nav-item">

@@ -12,6 +12,7 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="CateDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="http://localhost:8080/Oni_chan/Category/Allcategory">All</a>
             <a class="dropdown-item" href="http://localhost:8080/Oni_chan/Category/Action">Action</a>
             <a class="dropdown-item" href="http://localhost:8080/Oni_chan/Category/Adult">Adult</a>
             <a class="dropdown-item" href="http://localhost:8080/Oni_chan/Category/Adventure">Adventure</a>
@@ -29,9 +30,9 @@
           <a class="nav-link" href="http://localhost:8080/Oni_chan/Home/ContactUs">About Us</a>
         </li>
       </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search..." aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <form class="form-inline my-2 my-lg-0" action="http://localhost:8080/Oni_chan/Home/Search" method="POST">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search..." aria-label="Search" name="search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="btnSearch">Search</button>
       </form>
 
       <ul class="navbar-nav">

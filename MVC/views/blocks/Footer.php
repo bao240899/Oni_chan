@@ -27,7 +27,7 @@
       <div class="container">
         <div class="row">
           <div class="col-12">
-            <p>Copyright © Nextag. All rights reserved.</p>
+            <p>Copyright © Oni_chan. All rights reserved.</p>
           </div>
         </div>
       </div>

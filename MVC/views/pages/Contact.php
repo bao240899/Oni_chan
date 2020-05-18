@@ -1,4 +1,5 @@
 <div class="container">
+	<br>
 	<div name="title-information-page"><a href="Homepage" title="home">Home</a> / <a href="ContactUs" title="Contact-us">Contact Us</a></div><br>
 	<p name="title-contact-us"><strong>CONTACT US</strong></p><br>
 	<div class="row">
@@ -8,7 +9,7 @@
 		
 		<div class="col-sm-12 col-lg-4">
 		    <address>
-                <strong>Nextag, Inc.</strong><br>
+                <strong>Oni_Chan, Inc.</strong><br>
                 590 Cách Mạng Tháng 8, P15 , Q.Tân Bình<br>
                 Hồ Chí Minh, VN, 710000<br>
             <abbr title="Phone">P:</abbr> +84 28 3846 0846
