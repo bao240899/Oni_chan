@@ -26,7 +26,7 @@
 			<a class="nav-link" href="http://localhost:8080/Oni_chan/user/follow/<?= $_SESSION["userID"] ?>"><i class="fas fa-heart"></i> Follow</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" href="#"><i class="fas fa-comment"></i> Comment</a>
+			<a class="nav-link" href="http://localhost:8080/Oni_chan/user/comment/<?= $_SESSION["userID"] ?>"><i class="fas fa-comment"></i> Comment</a>
 		</li>
 		<li class="nav-item">
 			<a class="nav-link" href="#"><i class="fas fa-lock"></i> Password</a>

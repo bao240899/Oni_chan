@@ -37,6 +37,9 @@ class Manga extends controller
     }
     
     function commentProcess(){
+        if($_SESSION["userID"]=="somebody"||!isset($_SESSION["userID"])){
+            header("location:http://localhost:8080/Oni_chan/user/login");
+        }
         if(isset($_POST["btnAddComment"])){
             $userID=$_POST["userID"];
             $mangaID=$_POST["mangaID"];

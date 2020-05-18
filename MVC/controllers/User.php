@@ -3,6 +3,7 @@ class User extends Controller
 {
     public $UserModel;
     public $followModel;
+    public $commentModel;
     public function __construct()
     {
         if(!isset($_SESSION["userID"])){
@@ -10,6 +11,7 @@ class User extends Controller
         }
         $this->UserModel = $this->model("UserModel");
         $this->followModel = $this->model("followModel");
+        $this->commentModel = $this->model("commentModel");
     }
 
     function Register()
@@ -65,6 +67,9 @@ class User extends Controller
     }
     public function DetailUser()
     {
+        if($_SESSION["userID"]=="somebody"||!isset($_SESSION["userID"])){
+            header("location:http://localhost:8080/Oni_chan/user/login");
+        }
         $user = $this->model("UserModel");
         $this->view("DetailUser", [
             "Page" => "GetUser",
@@ -74,6 +79,9 @@ class User extends Controller
 
     public function EditUser()
     {
+        if($_SESSION["userID"]=="somebody"||!isset($_SESSION["userID"])){
+            header("location:http://localhost:8080/Oni_chan/user/login");
+        }
         if (isset($_POST["btnUpdate"])) {
             $userID = $_POST["userID"];
             $password = $_POST["password"];
@@ -84,15 +92,36 @@ class User extends Controller
     }
 
     function Account($userID){
+        if($_SESSION["userID"]=="somebody"||!isset($_SESSION["userID"])){
+            header("location:http://localhost:8080/Oni_chan/user/login");
+        }
         $this->view("DetailUser",[
             "Page"  => "General",
             "Manga" => $this->UserModel->follow($userID),
             "Info"  => $this->UserModel->getUserByUserID($userID)
         ]);
     }
-    
+    function comment($userID){
+        if($_SESSION["userID"]=="somebody"||!isset($_SESSION["userID"])){
+            header("location:http://localhost:8080/Oni_chan/user/login");
+        }
+        $this->view("DetailUser", [
+            "Page"  => "userComment",
+            "comment" => $this->commentModel->getCommentByUserID($userID)
+        ]);
+    }
+    function deleteComment($commentID){
+        if($_SESSION["userID"]=="somebody"||!isset($_SESSION["userID"])){
+            header("location:http://localhost:8080/Oni_chan/user/login");
+        }
+        $this->commentModel->deleteComment($commentID);
+        header("location:http://localhost:8080/Oni_chan/user/comment/".$_SESSION['userID']);
+    }
     function Follow($userID)
     {
+        if($_SESSION["userID"]=="somebody"||!isset($_SESSION["userID"])){
+            header("location:http://localhost:8080/Oni_chan/user/login");
+        }
         $this->view("DetailUser", [
             "Page"  => "Follow",
             "Manga" => $this->UserModel->follow($userID)
@@ -100,11 +129,17 @@ class User extends Controller
     }
     function addFollowProcess($userID,$mangaID)
     {
+        if($_SESSION["userID"]=="somebody"||!isset($_SESSION["userID"])){
+            header("location:http://localhost:8080/Oni_chan/user/login");
+        }
         $this->followModel->addFollow($userID,$mangaID);
         header("location:http://localhost:8080/Oni_chan/manga/detailmanga/$mangaID");
     }
     function unFollowProcess($userID,$mangaID)
     {
+        if($_SESSION["userID"]=="somebody"||!isset($_SESSION["userID"])){
+            header("location:http://localhost:8080/Oni_chan/user/login");
+        }
         $this->followModel->unFollow($userID,$mangaID);
         header("location:http://localhost:8080/Oni_chan/manga/detailmanga/$mangaID");
     }
