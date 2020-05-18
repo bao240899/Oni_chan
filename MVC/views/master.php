@@ -17,6 +17,7 @@
 	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 	  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 	  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="http://localhost:8080/Oni_chan/Public/js/Ajax.js"></script>
 	
   </head>
   <body>

@@ -38,6 +38,16 @@ class UserModel extends DB{
         return mysqli_query($this->con, $query);
     }
 
+    public function checkUserName($email){
+        $query = "SELECT userID FROM user WHERE userID = '$email' ";
+        $a = mysqli_query($this->con,$query);
+        $result = false;
+        if( mysqli_num_rows($a) > 0){
+            $result = true;
+        }
+        return json_encode($result);
+    }
+
     public function follow($userID){
         $query = " SELECT * 
                     FROM manga 
