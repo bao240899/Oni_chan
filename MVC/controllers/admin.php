@@ -5,13 +5,19 @@ class admin extends Controller
     public $chapterModel;
     public $commentModel;
     public $userModel;
+    public $adminModel;
     function __construct()
     {
+        if(!isset($_SESSION["adminID"])){
+            header("location:http://localhost:8080/Oni_chan/adminlogin/login");
+        }
         $this->commentModel=$this->model("commentModel");
         $this->mangaModel = $this->model("MangaModel");
         $this->chapterModel = $this->model("ChapterModel");
         $this->userModel = $this->model("userModel");
+        $this->adminModel = $this->model("adminModel");
     }
+    
     ///////////////////////////////////
     public function index(){
         $this->view("adminpage", [
