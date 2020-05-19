@@ -58,7 +58,7 @@
           </div> <!-- form-group// -->
 
           <div class="form-group">
-            <button name="bntEditChapter" type="submit" class="btn btn-success btn-block"> save </button>
+            <button name="bntEditChapter" type="submit" class="btn btn-success btn-block"> Save </button>
 			<button type="reset" class="btn btn-secondary btn-block "> Reset</button>
           </div> <!-- form-group// -->
 

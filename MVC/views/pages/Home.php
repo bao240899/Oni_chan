@@ -67,6 +67,6 @@
     <div><?php  
         require "./mvc/views/pages/pagination.php";
         ?>
-        </div>
+    </div>
 </div>
 

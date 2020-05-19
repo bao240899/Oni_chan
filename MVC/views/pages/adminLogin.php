@@ -8,15 +8,34 @@
     </div>
 
     <!-- Login Form -->
+    <article class="card-body mx-auto" style="max-width:80%;">
     <form method="post" action="http://localhost:8080/Oni_chan/adminLogin/processLogin">
-      <input type="text" id="login" class="fadeIn second" name="adminID" placeholder="login">
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"> <i class="fas fa-user"></i> </span>
+        </div>
+        <input name="adminID" id="login" class="form-control fadeIn second" placeholder="Username" type="text">
+      </div> <!-- form-group// -->
+
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+        </div>
+        <input name="password" id="password" class="form-control fadeIn third" placeholder="Password" type="password">
+      </div> <!-- form-group// -->
+
+      <div class="form-group">
+        <button name="btnLoginAdmin" type="submit" class="btn btn-secondary btn-block fadeIn fourth"> SIGN IN </button>
+      </div> <!-- form-group// -->
+      <!-- <input type="text" id="login" class="fadeIn second" name="adminID" placeholder="login">
       <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
-      <input type="submit" class="fadeIn fourth" value="Log In" name="btnLoginAdmin">
+      <input type="submit" class="fadeIn fourth" value="Log In" name="btnLoginAdmin">  -->
     </form>
+    </article>
 
     <!-- Remind Passowrd -->
     <div id="formFooter">
-      <a class="underlineHover" href="#">Forgot Password?</a>
+    <a href="#" style="font-size: 16px;color: black;">FORGOT PASSWORD?</a>
     </div>
 
   </div>
@@ -69,11 +88,11 @@ h2 {
   -webkit-border-radius: 10px 10px 10px 10px;
   border-radius: 10px 10px 10px 10px;
   background: #fff;
-  padding: 30px;
+  padding: 20px;
   width: 90%;
   max-width: 450px;
   position: relative;
-  padding: 0px;
+  
   -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
   box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
   text-align: center;
@@ -105,7 +124,7 @@ h2.active {
 
 /* FORM TYPOGRAPHY*/
 
-input[type=button], input[type=submit], input[type=reset]  {
+/*input[type=button], input[type=submit], input[type=reset]  {
   background-color: #56baed;
   border: none;
   color: white;
@@ -187,7 +206,7 @@ input[type=text]:focus {
 
 input[type=text]:placeholder {
   color: #cccccc;
-}
+}*/
 
 
 

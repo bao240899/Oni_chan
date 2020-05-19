@@ -1,6 +1,7 @@
 <?php $fields = mysqli_fetch_array($data["User"]); ?>
 <div class="container">
-         <h2>Modify User</h2>
+         <article class="card-body mx-auto" style="max-width: 600px;">
+         <h2>Modify User</h2><hr>
          <form method="POST" action="http://localhost:8080/Oni_chan/admin/editUserProcess" >
              <div class="form-group">
                 <label>ID: </label>
@@ -24,16 +25,21 @@
              </div>
              <div class="form-group">
                 <label for="name">Gender: </label>
-                <input type="text" class="form-control"  
-                       name="gender" 
-                       value="<?php if ($fields[4] == 0){
-                                    Echo "Male";
-                                    } else {Echo "Female";} ?>">
+                <select name="gender" class="custom-select">
+                  <?php if($fields["gender"]==0){?>
+                      <option value="0" selected >Male</option>
+                      <option value="1">Female</option>
+                  <?php }else{?>
+                      <option value="0" >Male</option>
+                      <option value="1" selected>Female</option>
+                  <?php }?>
+              </select>
              </div>
              <button type="submit" class="btn btn-secondary btn-primary btn-block" 
                      name="btnUpdateUser" value="Save" onclick="return confirm ('Modify Customer ???')">Submit</button>
         </form>
-        <p class="text-center text-danger"> 
+        </article>
+        <h3 class="text-center text-success">
         <?php
           if(isset($data["Result"])){
         ?>
@@ -47,6 +53,6 @@
         <?php
           }
         ?>
-        </p>
+        </h3>
          <br>
 </div>
