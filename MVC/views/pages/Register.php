@@ -15,13 +15,13 @@
             <div class="input-group-prepend">
               <span class="input-group-text"> <i class="fa fa-user"></i> </span>
             </div>
-            <input name="username" class="form-control" placeholder="Full name" type="text">
+            <input name="username" class="form-control" placeholder="Full name" type="text" required>
           </div> <!-- form-group// -->
           <div class="form-group input-group">
             <div class="input-group-prepend">
               <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
             </div>
-            <input name="email" id="email" class="form-control" placeholder="Email address" type="email">
+            <input name="email" id="email" class="form-control" placeholder="Email address" type="email" required>
             <p id="messageUsername"></p>
           </div> <!-- form-group// -->
           <div class="form-group input-group">
@@ -37,16 +37,16 @@
             <div class="input-group-prepend">
               <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
             </div>
-            <input name="password" class="form-control" placeholder="Create password" type="password">
+            <input name="password" id="password" class="form-control" placeholder="Create password" type="password" required> 
           </div> <!-- form-group// -->
           <div class="form-group input-group">
             <div class="input-group-prepend">
               <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
             </div>
-            <input name="repassword" class="form-control" placeholder="Repeat password" type="password">
+            <input name="repassword" id="confirm_password" class="form-control" placeholder="Repeat password" type="password">
           </div> <!-- form-group// -->
           <div class="form-group">
-            <button type="submit" name="btnRegister" class="btn btn-secondary btn-block"> Create Account </button>
+            <button type="submit" name="btnRegister" class="btn btn-secondary btn-block" onclick="myfunction()"> Create Account </button>
           </div> <!-- form-group// -->
           <p class="text-center">Have an account? <a href="http://localhost:8080/Oni_chan_project/Source_Code/Users/Login" style="font-size: 14px;color: black;text-decoration: underline">SIGN IN</a> </p>
         </form>
@@ -66,6 +66,23 @@
         ?>
         </p>
       </article>
+      <script>
+        var password = document.getElementById("password")
+          , confirm_password = document.getElementById("confirm_password");
+
+        function validatePassword(){
+          if(password.value != confirm_password.value) {
+            confirm_password.setCustomValidity("Passwords Don't Match");
+          } else {
+            confirm_password.setCustomValidity('');
+          }
+        }
+
+        password.onchange = validatePassword;
+        confirm_password.onkeyup = validatePassword;
+    </script>
     </div>
   </div>
+
+
 

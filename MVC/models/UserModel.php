@@ -48,6 +48,15 @@ class UserModel extends DB{
         return json_encode($result);
     }
 
+    public function change_password($userID,$newpassword){
+        $query = "UPDATE user SET password = '$newpassword' WHERE userID = '$userID'";
+        $result = false;
+        if(mysqli_query($this->con, $query)){
+            $result = true;
+        }
+        return json_encode($result);
+    }
+
     public function follow($userID){
         $query = " SELECT * 
                     FROM manga 

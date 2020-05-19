@@ -23,7 +23,6 @@ class User extends Controller
 
     function processRegister()
     {
-        if (isset($_POST["btnRegister"])) {
             $name = $_POST["username"];
             $email = $_POST["email"];
             $pwd = $_POST["password"];
@@ -35,7 +34,6 @@ class User extends Controller
                 "Page" => "Register",
                 "Result" => $result
             ]);
-        }
     }
 
     public function Login()
@@ -61,7 +59,7 @@ class User extends Controller
     public function Logout(){
         if(isset($_SESSION['userID'])){
             session_destroy();
-            header("location:http://localhost:8080/Oni_chan/user/login");
+            header("location:http://localhost:8080/Oni_chan/");
         }
         
     }
@@ -165,5 +163,11 @@ class User extends Controller
             "Page" => "userPassword",
             "user"=>$this->UserModel->getUserByUserID($userID)
         ]);
+    }
+    function change_password_process(){
+        $newpassword = $_POST["passwordNew"];
+        $userID = $_SESSION["userID"];
+        $this->UserModel->change_password($userID,$newpassword);
+        header("location:http://localhost:8080/Oni_chan/user/Account/$userID");
     }
 }
