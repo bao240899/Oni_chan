@@ -9,7 +9,11 @@ class chapterModel extends DB{
         return $arr;
     }
     public function getChapterByMangaID($mangaID){
-        $qr = "SELECT * FROM chapter where mangaID= '$mangaID' ORDER BY `chapter`.`lastChapter` ASC";
+        $qr = "SELECT * 
+        FROM chapter 
+        INNER JOIN manga 
+        WHERE chapter.mangaID = manga.mangaID AND manga.mangaID='$mangaID'  
+        ORDER BY `chapter`.`lastChapter` ASC";
         return mysqli_query($this->con, $qr);
     }
     public function getChapterByChapterID($chapterID){

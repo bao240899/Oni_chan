@@ -32,10 +32,20 @@ class Manga extends controller
     {
         $this->view("readmanga", [
             "Page" => "ReadChapter",
-            "chapter" => $this->chapterModel->GetChapterByID($mangaID, $chapterID)
+            "AllChapter"=>$this->chapterModel->getChapterByMangaID($mangaID),
+            "manga"=>$this->mangaModel->ShowManga($mangaID),
+            "chapter"=>$this->chapterModel->getChapterByChapterID($chapterID),
+            "checkFollow"=>$this->followModel->checkFollow($_SESSION["userID"],$mangaID),
+            "chapterImg" => $this->chapterModel->GetChapterByID($mangaID, $chapterID)
         ]); //view("aodep",["key"=>value])        
     }
-    
+    function choiceChapter(){
+        if(isset($_POST["btnChoice"])){
+            $mangaID=$_POST["manga"];
+            $chapterID=$_POST["chapter"];
+            header("location:http://localhost:8080/Oni_chan/manga/readchapter/$mangaID/$chapterID");
+        }
+    }
     function commentProcess(){
         if($_SESSION["userID"]=="somebody"||!isset($_SESSION["userID"])){
             header("location:http://localhost:8080/Oni_chan/user/login");
