@@ -6,7 +6,7 @@ class MangaModel extends DB{
     }
 
     public function SearchManga($keyword){
-        $qr = "SELECT * FROM `manga` WHERE mangaName = '$keyword' ";
+        $qr = "SELECT * FROM `manga` WHERE mangaName LIKE '%$keyword%' ";
         return mysqli_query($this->con, $qr);
 
     }
