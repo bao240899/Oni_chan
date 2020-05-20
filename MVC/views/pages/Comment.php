@@ -31,26 +31,14 @@
             } else {
             ?>
                 <form method="POST" action="../commentProcess">
-                    <tr>
-                        <th>
-                            comment
-                        </th>
-                    </tr>
-                    <tr>
-                        <td>
-
-                            <input type="hidden" name="userID" value="<?= $_SESSION["userID"] ?>">
-                            <input type="hidden" name="mangaID" value="<?= $data["mangaID"] ?>">
-                            <input type="hidden" name="date" value="<?= date('Y-m-d H:i:s') ?>">
-                            <textarea name="content" class="form-control" rows="5" id="comment"></textarea>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <button class="btn btn-primary" type="submit" name="btnAddComment">add comment</button>
-                        </td>
-                    </tr>
+                    <div class="form-group">
+                    <input type="hidden" name="userID" value="<?= $_SESSION["userID"] ?>">
+                    <input type="hidden" name="mangaID" value="<?= $data["mangaID"] ?>">
+                    <input type="hidden" name="date" value="<?= date('Y-m-d H:i:s') ?>">
+                    <label for="comment">Comment:</label>
+                    <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" name="btnAddComment">Submit</button>
                 </form>
             <?php } ?>
         </div>
