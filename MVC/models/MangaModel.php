@@ -9,6 +9,11 @@ class MangaModel extends DB{
         $qr = "SELECT * FROM `manga` WHERE mangaName LIKE '%$keyword%' ";
         return mysqli_query($this->con, $qr);
 
+    } public function SearchMangaToPage($keyword,$item_per_page,$offset){
+        $qr = "SELECT * FROM `manga` WHERE mangaName LIKE '%$keyword%'
+        ORDER BY `mangaID` ASC  LIMIT " . $item_per_page . " OFFSET " . $offset;
+        return mysqli_query($this->con, $qr);
+
     }
     public function addManga($mangaName,$Author,$Artists,$CategoryID,$Description,$Cover){
         $qr = "INSERT INTO `manga`(`mangaName`, `author`, `artsits`, `categoryID`, `description`, `view`, `rate`, `coverImage`) VALUES ('$mangaName','$Author','$Artists','$CategoryID','$Description',0,0,'$Cover')";
