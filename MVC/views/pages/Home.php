@@ -47,7 +47,7 @@
             while ($row = mysqli_fetch_assoc($data["MangaPage"])){
         ?>
           <div class="col-md-3 pb-1 pb-md-0 p-3">
-            <a href="manga/detailmanga/<?=$row["mangaID"]?>" class="text-decoration-none">
+            <a href="http://localhost:8080/Oni_chan/manga/detailmanga/<?=$row["mangaID"]?>" class="text-decoration-none">
               <div class="card">
               <img class="card-img-top" src="<?= $row["coverImage"]?>" style="width:160px;height:230px" alt="image">  
               </div>
@@ -68,5 +68,7 @@
         require "./mvc/views/pages/pagination.php";
         ?>
     </div>
+    
 </div>
+<div class="clear-both"></div>
 

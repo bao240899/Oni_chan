@@ -21,3 +21,8 @@
                 }
             ?>
         </div>
+        <div class="clear-both"></div>
+    <div><?php  
+        require "./mvc/views/pages/pagination.php";
+        ?>
+    </div>
