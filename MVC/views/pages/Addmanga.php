@@ -2,9 +2,10 @@
 <script type="text/javascript" src="dist/js/jquery-1.10.2.js"></script>
 <div class="container">
     <div class="card bg-light">
-      <article class="card-body mx-auto" style="max-width: 600px;">
-        <h4 class="card-title mt-3 text-center">Add Manga/Novel</h4>
+      
+        <h3 class="title-of-product mt-3 text-center">Add Manga/Novel</h3>
         <hr>
+        <article class="card-body mx-auto" style="max-width: 600px;">
         <form method="POST" action="http://localhost:8080/Oni_chan/admin/addMangaProcess">
           <div class="form-group input-group">
             <div class="input-group-prepend">
@@ -28,7 +29,16 @@
             <div class="input-group-prepend">
               <span class="input-group-text"> Category :  </span>
             </div>
-            <input name="category" class="form-control" type="text">
+            <select name="category" class="custom-select">
+              <option value="101">Action</option>
+              <option value="102">Adult</option>
+              <option value="103">Adventure</option>
+              <option value="104">Comedy</option>
+              <option value="105">Drama</option>
+              <option value="106">Ecchi</option>
+              <option value="107">Horrow</option>
+              <option value="108">Sci-fi</option>
+            </select>
           </div> <!-- form-group// -->
            <!-- form-group// -->
           <div class="form-group input-group">

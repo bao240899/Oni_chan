@@ -1,9 +1,8 @@
 
 <div class="container">
     <div class="card bg-light">
+    <h4 class="title-of-product mt-3 text-center">Add Chapter</h4><hr>
       <article class="card-body mx-auto" style="max-width: 600px;">
-        <h4 class="card-title mt-3 text-center">Add Chapter</h4>
-        <hr>
         <form method="POST" action="http://localhost:8080/Oni_chan/admin/addChapterProcess">
 
             <div class="form-group input-group">

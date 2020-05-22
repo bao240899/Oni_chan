@@ -34,7 +34,7 @@ $lastChapter = mysqli_fetch_array($data["lastChapter"]);
 						</tr>
 						<tr>
 							<td><i class="fas fa-tags"></i> Category:</td>
-							<td><?= $fields["categoryID"] ?></td>
+							<td><?= $fields["categoryName"] ?></td>
 						</tr>
 						<tr>
 							<td><i class="far fa-eye"></i> View:</td>

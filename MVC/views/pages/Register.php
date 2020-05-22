@@ -22,11 +22,13 @@
               <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
             </div>
             <input name="email" id="email" class="form-control" placeholder="Email address" type="email" required>
-            <span class="input-group-text"><p id="messageUsername"></span>
+            <?php if (isset($data["email_error"])): ?>
+              <span class="text-danger"><?php echo $data["email_error"]; ?></span>
+            <?php endif ?>
           </div> <!-- form-group// -->
           <div class="form-group input-group">
             <div class="input-group-prepend">
-            <span class="input-group-text"> <i class="fas fa-venus-mars"></i> </span>
+            <div class="input-group-text"> <i class="fas fa-venus-mars"></i> </div>
             </div>
           <select name="gender" class="custom-select">
               <option value="0">Male</option>
@@ -56,11 +58,7 @@
           if(isset($data["Result"])){
         ?>
         <?php
-          if($data["Result"] == True){
-            echo "Sign-Up Success";
-          } else {
-            echo "Sign-Up Fail";
-          }
+            echo $data["Result"];
         ?>
         <?php
           }
@@ -71,6 +69,7 @@
         var password = document.getElementById("password")
           , confirm_password = document.getElementById("confirm_password");
 
+
         function validatePassword(){
           if(password.value != confirm_password.value) {
             confirm_password.setCustomValidity("Passwords Don't Match");
@@ -78,7 +77,6 @@
             confirm_password.setCustomValidity('');
           }
         }
-
         password.onchange = validatePassword;
         confirm_password.onkeyup = validatePassword;
     </script>

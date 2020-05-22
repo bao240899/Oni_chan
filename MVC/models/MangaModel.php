@@ -1,7 +1,7 @@
 <?php
 class MangaModel extends DB{
     public function GetManga(){
-        $qr = "SELECT * FROM manga";
+        $qr = "SELECT * FROM `manga`";
         return mysqli_query($this->con, $qr);
     }
 
@@ -19,7 +19,7 @@ class MangaModel extends DB{
         return json_encode($result);
     }
     public function ShowManga($mangaID){
-        $qr = "SELECT * FROM manga WHERE mangaID = '$mangaID'";
+        $qr = "SELECT * FROM manga INNER JOIN category WHERE mangaID = '$mangaID' AND manga.categoryID = category.categoryID";
         return mysqli_query($this->con, $qr);
     }
 

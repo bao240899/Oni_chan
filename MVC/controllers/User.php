@@ -27,13 +27,21 @@ class User extends Controller
             $email = $_POST["email"];
             $pwd = $_POST["password"];
             $gender = $_POST["gender"];
-            //Insert Data to DB
-            $result = $this->UserModel->AddUser($name, $email, $pwd, $gender);
-            //Show notification
+            $check = $this->UserModel->checkUserName($email);
+            if( mysqli_num_rows($check) > 0 ){
+                //Show notification
             $this->view("master", [
                 "Page" => "Register",
-                "Result" => $result
+                "email_error" => "Sorry... email already taken"
             ]);
+            } else {
+                $this->UserModel->AddUser($name, $email, $pwd, $gender);
+                //Show notification
+                $this->view("master", [
+                    "Page" => "Register",
+                    "Result" => "Register Successful"
+                ]);
+            }  
     }
 
     public function Login()

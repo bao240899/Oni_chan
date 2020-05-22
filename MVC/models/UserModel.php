@@ -40,12 +40,7 @@ class UserModel extends DB{
 
     public function checkUserName($email){
         $query = "SELECT userID FROM user WHERE userID = '$email' ";
-        $a = mysqli_query($this->con,$query);
-        if( mysqli_num_rows($a) > 0){
-            $result = 'Username already';
-            return $result;
-        }
-        
+        return mysqli_query($this->con,$query);
     }
 
     public function change_password($userID,$newpassword){
