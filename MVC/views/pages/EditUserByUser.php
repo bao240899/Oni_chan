@@ -46,3 +46,14 @@
     </form>
 </article>
 </div>
+<?php if(isset($_SESSION["notification_EditUser"])&&$_SESSION["notification_EditUser"]=="success"){?>
+  <script>
+    alert("edit success");
+    <?php $_SESSION["notification_EditUser"]="off"?>
+  </script>
+<?php }else if(isset($_SESSION["notification_EditUser"])&&$_SESSION["notification_EditUser"]=="fail"){?>
+  <script>
+    alert("edit fail");
+    <?php $_SESSION["notification_EditUser"]="off"?>
+  </script>
+<?php }?>

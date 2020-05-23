@@ -1,3 +1,9 @@
+<?php if(isset( $_SESSION["notification_AdminLogin"])&&$_SESSION["notification_AdminLogin"]=="success"){?>
+  <script>
+    alert("Hello admin");
+    <?php $_SESSION["notification_AdminLogin"]="off"?>
+  </script>
+<?php }?>
 <br><section class="content">
       <div class="container-fluid">
         <!-- Info boxes -->

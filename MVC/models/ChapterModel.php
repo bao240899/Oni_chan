@@ -30,15 +30,27 @@ class chapterModel extends DB{
     }
     public function addChapter($chapterName,$mangaID,$content,$view,$lastUpdate,$lastChapter){
         $qr = " INSERT INTO `chapter`( `chapterName`, `mangaID`, `content`, `view`, `lastUpdate`, `lastChapter`) VALUES ('$chapterName','$mangaID','$content','$view','$lastUpdate','$lastChapter')";
-        return mysqli_query($this->con, $qr);
+        $result= false;
+        if(mysqli_query($this->con, $qr)){
+            $result= true;
+        }
+        return json_encode($result);
     }
     public function editChapter($chapterID,$chapterName,$mangaID,$content,$view,$lastUpdate,$lastChapter){
         $qr = " UPDATE `chapter` SET `chapterName`='$chapterName',`mangaID`='$mangaID',`content`='$content',`view`='$view',`lastUpdate`='$lastUpdate',`lastChapter`='$lastChapter' WHERE `chapterID`='$chapterID'";
-        return mysqli_query($this->con, $qr);
+        $result= false;
+        if(mysqli_query($this->con, $qr)){
+            $result= true;
+        }
+        return json_encode($result);
     }
     public function deleteChapter($chapterID){
         $qr = " DELETE FROM `chapter` WHERE `chapterID`='$chapterID'";
-        return mysqli_query($this->con, $qr);
+        $result= false;
+        if(mysqli_query($this->con, $qr)){
+            $result= true;
+        }
+        return json_encode($result);
     }
 }
 ?>

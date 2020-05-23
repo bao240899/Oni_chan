@@ -41,3 +41,14 @@
         </div>
     </div>
 </div>
+<?php if(isset($_SESSION["notification_ChangePassword"])&&$_SESSION["notification_ChangePassword"]=="success"){?>
+  <script>
+    alert("change password success");
+    <?php $_SESSION["notification_ChangePassword"]="off"?>
+  </script>
+<?php }else if(isset($_SESSION["notification_ChangePassword"])&&$_SESSION["notification_ChangePassword"]=="fail"){?>
+  <script>
+    alert("change password fail");
+    <?php $_SESSION["notification_ChangePassword"]="off"?>
+  </script>
+<?php }?>

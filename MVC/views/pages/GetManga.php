@@ -48,3 +48,26 @@
         ?>
     </table>
 </div>
+<?php if(isset($_SESSION["notification_DeleteManga"])&&$_SESSION["notification_DeleteManga"]=="success"){?>
+  <script>
+    alert("Delete manga success");
+    <?php $_SESSION["notification_DeleteManga"]="off"?>
+  </script>
+<?php }else if(isset($_SESSION["notification_DeleteManga"])&&$_SESSION["notification_DeleteManga"]=="fail"){?>
+  <script>
+    alert("Delete manga fail, delete chapter first");
+    <?php $_SESSION["notification_DeleteManga"]="off"?>
+  </script>
+<?php }?>
+
+<?php if(isset($_SESSION["notification_AddManga"])&&$_SESSION["notification_AddManga"]=="success"){?>
+  <script>
+    alert("add manga success");
+    <?php $_SESSION["notification_AddManga"]="off"?>
+  </script>
+<?php }else if(isset($_SESSION["notification_AddManga"])&&$_SESSION["notification_AddManga"]=="fail"){?>
+  <script>
+    alert("add manga fail");
+    <?php $_SESSION["notification_AddManga"]="off"?>
+  </script>
+<?php }?>

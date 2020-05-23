@@ -7,7 +7,11 @@
                 <div class="card card-white post">
                     <div class="post-heading">
                         <div class="float-left image">
-                            <img src="http://bootdey.com/img/Content/user_1.jpg" class="img-circle avatar" alt="user profile image">
+                            <?php if ($fields["avatar"] == null) { ?>
+                                <img src="http://bootdey.com/img/Content/user_1.jpg" class="img-circle avatar" alt="user profile image">
+                            <?php } else { ?>
+                                <img src="<?=$fields["avatar"]?>" class="img-circle avatar" alt="user profile image">
+                            <?php } ?>
                         </div>
                         <div class="float-left meta">
                             <div class="title h5">
@@ -32,11 +36,11 @@
             ?>
                 <form method="POST" action="../commentProcess">
                     <div class="form-group">
-                    <input type="hidden" name="userID" value="<?= $_SESSION["userID"] ?>">
-                    <input type="hidden" name="mangaID" value="<?= $data["mangaID"] ?>">
-                    <input type="hidden" name="date" value="<?= date('Y-m-d H:i:s') ?>">
-                    <label for="comment">Comment:</label>
-                    <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
+                        <input type="hidden" name="userID" value="<?= $_SESSION["userID"] ?>">
+                        <input type="hidden" name="mangaID" value="<?= $data["mangaID"] ?>">
+                        <input type="hidden" name="date" value="<?= date('Y-m-d H:i:s') ?>">
+                        <label for="comment">Comment:</label>
+                        <textarea class="form-control" rows="5" id="comment" name="content"></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary" name="btnAddComment">Submit</button>
                 </form>

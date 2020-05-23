@@ -4,7 +4,10 @@
             $query = "SELECT * FROM manga";
             return mysqli_query($this->con, $query);
         }
-
+        public function getCategory(){
+            $query = "SELECT * FROM category";
+            return mysqli_query($this->con, $query);
+        }
         public function Action(){
             $query = "SELECT * FROM `manga` 
                         INNER JOIN category 
