@@ -22,7 +22,7 @@
                 <td><?= $fields[2] ?></td>
                 
                 <td>
-                    <textarea rows="5" cols="20"><?= $fields[3] ?></textarea>
+                    <textarea rows="5" cols="20" readonly><?= $fields[3] ?></textarea>
                 </td>
                 <td><?= $fields[4] ?></td>
                 <td><?= $fields[5] ?></td>

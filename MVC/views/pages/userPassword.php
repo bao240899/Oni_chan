@@ -13,8 +13,7 @@
             </div> <!-- form-group// -->
             <div class="form-group">
             <label for="email">Old password</label>
-            <input name="passwordOld" id="passwordOld" class="form-control" type="password" required
-            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+            <input name="passwordOld" id="passwordOld" class="form-control" type="password" required>
             </div> <!-- form-group// -->
             <div class="form-group">
             <label for="email">New password</label>
@@ -23,8 +22,7 @@
             </div> <!-- form-group// -->
             <div class="form-group ">
             <label for="email">Repeat new password</label>
-            <input name="REpassword" id="REpassword" class="form-control" type="password"
-            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" >
+            <input name="REpassword" id="REpassword" class="form-control" type="password">
             </div> <!-- form-group// -->
             <div class="form-group">
             <button type="submit" name="btnUpdate" class="btn btn-secondary btn-block"> Save </button>

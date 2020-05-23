@@ -18,7 +18,7 @@
                 <td><?= $fields["password"] ?></td>
                 <td><?= $fields["userName"] ?></td>
                 <td>
-                    <textarea rows="3" cols="20"><?= $fields["avatar"] ?></textarea>
+                    <textarea rows="3" cols="20" readonly><?= $fields["avatar"] ?></textarea>
                 </td>
                 <td>
                     <?php if ($fields["gender"] == 0) {

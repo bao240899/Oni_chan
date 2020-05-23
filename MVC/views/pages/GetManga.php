@@ -25,12 +25,12 @@
                 <td><?= $fields[3] ?></td>
                 <td><?= $fields[4] ?></td>
                 <td>
-                    <textarea rows="5" cols="20"><?= $fields[5] ?></textarea>
+                    <textarea rows="5" cols="20" readonly><?= $fields[5] ?></textarea>
                </td>
                 <td><?= $fields[6] ?></td>
                 <td><?= $fields[7] ?></td>
                 <td>
-                    <textarea rows="5" cols="15"><?= $fields[8] ?></textarea>
+                    <textarea rows="5" cols="15" readonly><?= $fields[8] ?></textarea>
                 </td>
                 <td><a href="./getchapter/<?= $fields[0] ?>" class="btn btn btn-outline-secondary">chapter</a>
                     <br><br>
