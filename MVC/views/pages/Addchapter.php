@@ -1,4 +1,4 @@
-
+<?php $field=mysqli_fetch_array($data["NumberOfNewChapter"])?>
 <div class="container">
     <div class="card bg-light">
     <h4 class="title-of-product mt-3 text-center">Add Chapter</h4><hr>
@@ -45,9 +45,9 @@
 
           <div class="form-group input-group">
             <div class="input-group-prepend">
-              <span class="input-group-text"> Last Chapter :  </span>
+              <span class="input-group-text"> Chapter's number :  </span>
             </div>
-            <input name="lastChapter" class="form-control" type="text">
+            <input name="lastChapter" class="form-control" type="text" value="<?=$field["lastChapter"]+1?>">
           </div> <!-- form-group// -->
 
           <div class="form-group">
