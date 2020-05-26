@@ -70,4 +70,11 @@ class Home extends Controller
             "current_page"=>$current_page
         ]);
     }
+
+    public function Error(){
+        $this->view("master",[
+            "Page" => "404"
+        ]);
+    }
+
 }

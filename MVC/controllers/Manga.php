@@ -16,20 +16,31 @@ class Manga extends controller
         $this->followModel = $this->model("followModel");
     }
     function DetailManga($mangaID){
-        $this->view("master",[
-            "Page"=>"DetailManga",
-            "Manga"=> $this->mangaModel->ShowManga($mangaID),
-            "comment"=>$this->commentModel->getAllCommentByManga($mangaID),
-            "mangaID"=>$mangaID,
-            "chapter"=>$this->chapterModel->getChapterByMangaID($mangaID),
-            "firstChapter"=>$this->chapterModel->getFirstChapter($mangaID),
-            "lastChapter"=>$this->chapterModel->getLastChapter($mangaID),
-            "checkFollow"=>$this->followModel->checkFollow($_SESSION["userID"],$mangaID),
-            "toplist"=>$this->mangaModel->Toplist()
-        ]);
+        $check = $this->mangaModel->ShowManga($mangaID);
+        if( mysqli_num_rows($check) > 0){
+            $this->view("master",[
+                "Page"=>"DetailManga",
+                "Manga"=> $this->mangaModel->ShowManga($mangaID),
+                "comment"=>$this->commentModel->getAllCommentByManga($mangaID),
+                "mangaID"=>$mangaID,
+                "chapter"=>$this->chapterModel->getChapterByMangaID($mangaID),
+                "firstChapter"=>$this->chapterModel->getFirstChapter($mangaID),
+                "lastChapter"=>$this->chapterModel->getLastChapter($mangaID),
+                "checkFollow"=>$this->followModel->checkFollow($_SESSION["userID"],$mangaID),
+                "toplist"=>$this->mangaModel->Toplist()
+            ]);
+
+        } else {
+            $this->view("master",[
+                "Page"=>"404"
+            ]);
+        }
+
     }
     static function readChapter($mangaID, $chapterID)
     {
+        $check = $this->chapterModel->CheckChapterByID($mangaID,$chapterID);
+        if( mysqli_num_rows($check) > 0){
         $this->view("readmanga", [
             "Page" => "ReadChapter",
             "AllChapter"=>$this->chapterModel->getChapterByMangaID($mangaID),
@@ -37,7 +48,12 @@ class Manga extends controller
             "chapter"=>$this->chapterModel->getChapterByChapterID($chapterID),
             "checkFollow"=>$this->followModel->checkFollow($_SESSION["userID"],$mangaID),
             "chapterImg" => $this->chapterModel->GetChapterByID($mangaID, $chapterID)
-        ]); //view("aodep",["key"=>value])        
+        ]); //view("aodep",["key"=>value])    
+        } else {
+            $this->view("readmanga",[
+                "Page"=>"404"
+            ]);
+        }    
     }
     function choiceChapter(){
         if(isset($_POST["btnChoice"])){
