@@ -13,6 +13,9 @@
             </div>
             <input name="bookname" class="form-control"  type="text" required>
           </div> <!-- form-group// -->
+          <?php if (isset($data["Manganame_error"])): ?>
+              <span class="text-danger text-center"><?php echo $data["Manganame_error"]; ?></span><br>
+          <?php endif ?>
           <div class="form-group input-group">
             <div class="input-group-prepend">
               <span class="input-group-text"> Author : </span>
@@ -55,7 +58,7 @@
           </div> <!-- form-group// -->
           <div class="form-group">
             <button type="submit" class="btn btn-success btn-block" name="bntAddManga"> Add Book </button>
-			<button type="reset" class="btn btn-secondary btn-block "> Reset</button>
+			      <button type="reset" class="btn btn-secondary btn-block "> Reset</button>
           </div> <!-- form-group// -->
         </form>
       </article>

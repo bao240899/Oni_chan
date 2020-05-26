@@ -42,24 +42,30 @@ class admin extends Controller
     }
     function addMangaProcess()
     {
-        if (isset($_POST["bntAddManga"])) {
             $mangaName = $_POST["bookname"];
             $Author = $_POST["author"];
             $Artists = $_POST["artists"];
             $CategoryID = $_POST["category"];
             $Description = $_POST["description"];
             $Cover = $_POST["cover"];
+        $checkMangaName = $this->mangaModel->CheckMangaName($mangaName);
+        if(mysqli_num_rows($checkMangaName) > 0){
+            $this->view("adminpage", [
+                "Page" => "Addmanga",
+                "Manganame_error" => "Sorry... Manga Name already exist",
+            ]);
+        } else {
+            $result=$this->mangaModel->addManga($mangaName, $Author, $Artists, $CategoryID, $Description, $Cover);
+            if($result=="true"){
+                $_SESSION["notification_AddManga"]="success";
+                header("location:http://localhost:8080/Oni_chan/admin/getmanga");
+            }
+            else{
+                $_SESSION["notification_AddManga"]="fail";
+                header("location:http://localhost:8080/Oni_chan/admin/getmanga");
+            }
         }
-        $result=$this->mangaModel->addManga($mangaName, $Author, $Artists, $CategoryID, $Description, $Cover);
-        if($result=="true"){
-            $_SESSION["notification_AddManga"]="success";
-            header("location:http://localhost:8080/Oni_chan/admin/getmanga");
-        }
-        else{
-            $_SESSION["notification_AddManga"]="fail";
-            header("location:http://localhost:8080/Oni_chan/admin/getmanga");
-        }
-        
+ 
     }
     function editmanga($mangaID)
     {
@@ -135,7 +141,7 @@ class admin extends Controller
             $this->view("adminpage", [
                 "Page" => "Addchapter",
                 "MangaID"=>$mangaID,
-                "chaptername_error" => "Sorry... Chapter Name already taken",
+                "chaptername_error" => "Sorry... Chapter Name already exist",
                 "NumberOfNewChapter"=>$this->chapterModel->getLastChapter($mangaID)
             ]);
         }
@@ -144,7 +150,7 @@ class admin extends Controller
             $this->view("adminpage", [
                 "Page" => "Addchapter",
                 "MangaID"=>$mangaID,
-                "chapterNumber_error" => "Sorry... Chapter number already taken",
+                "chapterNumber_error" => "Sorry... Chapter number already exist",
                 "NumberOfNewChapter"=>$this->chapterModel->getLastChapter($mangaID)
             ]);
         } else {

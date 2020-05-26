@@ -9,7 +9,9 @@ class MangaModel extends DB{
         $qr = "SELECT * FROM `manga` WHERE mangaName LIKE '%$keyword%' ";
         return mysqli_query($this->con, $qr);
 
-    } public function SearchMangaToPage($keyword,$item_per_page,$offset){
+    } 
+    
+    public function SearchMangaToPage($keyword,$item_per_page,$offset){
         $qr = "SELECT * FROM `manga` WHERE mangaName LIKE '%$keyword%'
         ORDER BY `mangaID` ASC  LIMIT " . $item_per_page . " OFFSET " . $offset;
         return mysqli_query($this->con, $qr);
@@ -23,6 +25,12 @@ class MangaModel extends DB{
         }
         return json_encode($result);
     }
+
+    public function CheckMangaName($mangaName){
+        $qr = "SELECT * FROM `manga` WHERE mangaName = '$mangaName' ";
+        return mysqli_query($this->con, $qr);
+    }
+
     public function ShowManga($mangaID){
         $qr = "SELECT * FROM manga INNER JOIN category WHERE mangaID = '$mangaID' AND manga.categoryID = category.categoryID";
         return mysqli_query($this->con, $qr);
