@@ -17,11 +17,11 @@
             </div> <!-- form-group// -->
             <div class="form-group">
             <label for="email">New password</label>
-            <input name="passwordNew" id="passwordNew" class="form-control" type="password">
+            <input name="passwordNew" id="passwordNew" class="form-control" type="password" required>
             </div> <!-- form-group// -->
             <div class="form-group ">
             <label for="email">Repeat new password</label>
-            <input name="REpassword" id="REpassword" class="form-control" type="password">
+            <input name="REpassword" id="REpassword" class="form-control" type="password" required>
             </div> <!-- form-group// -->
             <div class="form-group">
             <button type="submit" name="btnUpdate" class="btn btn-secondary btn-block"> Save </button>

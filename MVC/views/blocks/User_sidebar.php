@@ -2,7 +2,7 @@
 	<div class="user-info ">
 	
 		<figure>
-		<div class="media ">
+		<div class="media">
 			<img src="https://www.upsieutoc.com/images/2020/05/14/17004.png" 
 			class="align-self-center mr-3"  width="50" height="50">
 			<div class="media-body">
