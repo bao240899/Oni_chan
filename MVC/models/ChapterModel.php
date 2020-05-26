@@ -8,6 +8,10 @@ class chapterModel extends DB{
         $arr =explode("http",$text);
         return $arr;
     }
+    public function CheckChapterByID($mangaID,$chapterID){
+        $qr = "SELECT * FROM chapter where mangaID= '$mangaID' and chapterID= '$chapterID' ";
+        return mysqli_query($this->con, $qr);
+    }
     public function getChapterByMangaID($mangaID){
         $qr = "SELECT * 
         FROM chapter 
