@@ -127,14 +127,24 @@ class admin extends Controller
             $lastUpdate=$_POST["lastUpdate"];
             $lastChapter=$_POST["lastChapter"];
         }
-        $result=$this->chapterModel->addchapter($chapterName,$mangaID,$content,$view,$lastUpdate,$lastChapter);
-        if($result=="true"){
-            $_SESSION["notification_AddChapter"]="success";
-            header("location:http://localhost:8080/Oni_chan/admin/GetChapter/$mangaID");
-        }
-        else{
-            $_SESSION["notification_AddChapter"]="fail";
-            header("location:http://localhost:8080/Oni_chan/admin/GetChapter/$mangaID");
+        $checkChapterName = $this->chapterModel->checkChapterName($mangaID,$chapterName);
+        if (mysqli_num_rows($checkChapterName) > 0) {
+            //Show notification
+            $this->view("adminpage", [
+                "Page" => "Addchapter",
+                "MangaID"=>$mangaID,
+                "chaptername_error" => "Sorry... Chapter Name already taken"
+            ]);
+        } else {
+            $result=$this->chapterModel->addchapter($chapterName,$mangaID,$content,$view,$lastUpdate,$lastChapter);
+            if($result=="true"){
+                $_SESSION["notification_AddChapter"]="success";
+                header("location:http://localhost:8080/Oni_chan/admin/GetChapter/$mangaID");
+            }
+            else{
+                $_SESSION["notification_AddChapter"]="fail";
+                header("location:http://localhost:8080/Oni_chan/admin/GetChapter/$mangaID");
+            }
         }
         
     }

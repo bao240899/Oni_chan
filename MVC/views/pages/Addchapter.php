@@ -3,6 +3,7 @@
     <div class="card bg-light">
     <h4 class="title-of-product mt-3 text-center">Add Chapter</h4><hr>
       <article class="card-body mx-auto" style="max-width: 600px;">
+
         <form method="POST" action="http://localhost:8080/Oni_chan/admin/addChapterProcess">
 
             <div class="form-group input-group">
@@ -11,7 +12,9 @@
             </div>
             <input name="chaptername" class="form-control"  type="text">
           </div> <!-- form-group// -->
-          
+          <?php if (isset($data["chaptername_error"])): ?>
+              <span class="text-danger text-center"><?php echo $data["chaptername_error"]; ?></span><br>
+          <?php endif ?>
           <div class="form-group input-group">
           <div class="input-group-prepend">
               <span class="input-group-text"> Manga's ID : </span>

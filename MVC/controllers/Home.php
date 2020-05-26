@@ -43,6 +43,12 @@ class Home extends Controller
         ]);
     }
 
+    function PrivacyPolicy(){
+        $this->view("master", [
+            "Page" => "Policy"
+        ]);
+    }
+
     public function Search(){
         $keyword = "";
         

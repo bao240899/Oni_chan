@@ -5,12 +5,13 @@
     <table class="table table table-striped ">
         <tr>
             <th>ID</th>
+            <th>Chapter's number</th>
             <th>Name</th>
             <th>Manga ID</th>
             <th>Content</th>
             <th>View</th>
             <th>Last Update</th>
-            <th>Chapter</th>
+            
             <th colspan="2">Action</th>
         </tr>
         <?php
@@ -18,6 +19,7 @@
         ?>
             <tr>
                 <td><?= $fields[0] ?></td>
+                <td><?= $fields[6] ?></td>
                 <td><?= $fields[1] ?></td>
                 <td><?= $fields[2] ?></td>
                 
@@ -26,7 +28,7 @@
                 </td>
                 <td><?= $fields[4] ?></td>
                 <td><?= $fields[5] ?></td>
-                <td><?= $fields[6] ?></td>
+                
 
                 <td><a href="../EditChapter/<?= $fields[0] ?>" class="btn btn btn-outline-secondary">Edit</a></td>
 

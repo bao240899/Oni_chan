@@ -29,7 +29,7 @@
                     ?>
                 </td>
                 <td>
-                    <a href="edituser/<?= $fields[0] ?>" class="btn btn btn-outline-secondary">Edit</a>
+                    <!--<a href="edituser/<?= $fields[0] ?>" class="btn btn btn-outline-secondary">Edit</a>-->
                     <a href="deleteuser/<?= $fields[0] ?> " onclick="return confirm('Are you sure to remove?')" class="btn btn btn-outline-secondary">Delete</a>
                 </td>
 

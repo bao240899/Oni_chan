@@ -1,7 +1,24 @@
-<div class="container">
-    <h2>Comment</h2>
+<div class="container"> 
     <div class="row">
         <div class="col-8">
+        <?php if (!isset($_SESSION["userID"]) || $_SESSION["userID"] == "somebody") {
+            ?><a href="http://localhost:8080/Oni_chan/user/login"><button class="btn btn-primary">Login to comment</button></a>
+            <?php
+            } else {
+            ?>
+                <form method="POST" action="../commentProcess">
+                    <div class="form-group">
+                        <input type="hidden" name="userID" value="<?= $_SESSION["userID"] ?>">
+                        <input type="hidden" name="mangaID" value="<?= $data["mangaID"] ?>">
+                        <input type="hidden" name="date" value="<?= date('Y-m-d H:i:s') ?>">
+                        <label for="comment">Comment:</label>
+                        <textarea class="form-control" rows="5" id="comment" name="content" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" name="btnAddComment">Submit</button>
+                </form>
+            <?php } ?>
+            <hr>
+            <h2>Comment</h2>
             <?php while ($fields = mysqli_fetch_array($data["comment"])) {
             ?>
                 <div class="card card-white post">
@@ -29,22 +46,6 @@
                 <hr>
             <?php
             } ?>
-            <?php if (!isset($_SESSION["userID"]) || $_SESSION["userID"] == "somebody") {
-            ?><a href="http://localhost:8080/Oni_chan/user/login"><button class="btn btn-primary">Login to comment</button></a>
-            <?php
-            } else {
-            ?>
-                <form method="POST" action="../commentProcess">
-                    <div class="form-group">
-                        <input type="hidden" name="userID" value="<?= $_SESSION["userID"] ?>">
-                        <input type="hidden" name="mangaID" value="<?= $data["mangaID"] ?>">
-                        <input type="hidden" name="date" value="<?= date('Y-m-d H:i:s') ?>">
-                        <label for="comment">Comment:</label>
-                        <textarea class="form-control" rows="5" id="comment" name="content"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary" name="btnAddComment">Submit</button>
-                </form>
-            <?php } ?>
         </div>
 
     </div>

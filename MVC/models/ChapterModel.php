@@ -36,6 +36,10 @@ class chapterModel extends DB{
         }
         return json_encode($result);
     }
+    public function checkChapterName($mangaID,$chapterName){
+        $query = "SELECT chapterName FROM chapter WHERE mangaid='$mangaID' AND chapterName = '$chapterName' ";
+        return mysqli_query($this->con,$query);
+    }
     public function editChapter($chapterID,$chapterName,$mangaID,$content,$view,$lastUpdate,$lastChapter){
         $qr = " UPDATE `chapter` SET `chapterName`='$chapterName',`mangaID`='$mangaID',`content`='$content',`view`='$view',`lastUpdate`='$lastUpdate',`lastChapter`='$lastChapter' WHERE `chapterID`='$chapterID'";
         $result= false;

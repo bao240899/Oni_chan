@@ -97,8 +97,8 @@ $lastChapter = mysqli_fetch_array($data["lastChapter"]);
 					<?php
 					}
 					?>
-
 				</div>
+				<hr>
 			</div>
 		</div>
 		<div class="col-md-4 col-sm-0">
@@ -106,6 +106,7 @@ $lastChapter = mysqli_fetch_array($data["lastChapter"]);
 		</div>
 	</div>
 </div>
+
 <?php
 require_once "./mvc/views/pages/comment.php";
 ?>
