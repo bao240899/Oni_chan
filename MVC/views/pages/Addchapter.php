@@ -10,7 +10,7 @@
             <div class="input-group-prepend">
               <span class="input-group-text"> Chapter's Name : </span>
             </div>
-            <input name="chaptername" class="form-control"  type="text">
+            <input name="chaptername" class="form-control"  type="text" required>
           </div> <!-- form-group// -->
           <?php if (isset($data["chaptername_error"])): ?>
               <span class="text-danger text-center"><?php echo $data["chaptername_error"]; ?></span><br>
@@ -50,9 +50,11 @@
             <div class="input-group-prepend">
               <span class="input-group-text"> Chapter's number :  </span>
             </div>
-            <input name="lastChapter" class="form-control" type="text" value="<?=$field["lastChapter"]+1?>">
+            <input name="lastChapter" class="form-control" type="number" value="<?=$field["lastChapter"]+1?>" required>
           </div> <!-- form-group// -->
-
+          <?php if (isset($data["chapterNumber_error"])): ?>
+              <span class="text-danger text-center"><?php echo $data["chapterNumber_error"]; ?></span><br>
+          <?php endif ?>
           <div class="form-group">
             <button name="bntAddChapter" type="submit" class="btn btn-success btn-block"> Add Chapter </button>
 			<button type="reset" class="btn btn-secondary btn-block "> Reset</button>

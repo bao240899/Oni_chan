@@ -4,7 +4,7 @@
       <article class="card-body mx-auto" style="max-width: 600px;">
         <h4 class="card-title mt-3 text-center">Edit Chapter</h4>
         <hr>
-        <form method="POST" action="../EditChapterProcess">
+        <form method="POST" action="http://localhost:8080/Oni_chan/admin/EditChapterProcess">
           <div class="form-group input-group mt-3">
             <div class="input-group-prepend">
               <span class="input-group-text"> Chapter's ID : </span>
@@ -16,9 +16,11 @@
             <div class="input-group-prepend">
               <span class="input-group-text"> Chapter's Name : </span>
             </div>
-            <input name="chaptername" class="form-control"  type="text"value="<?=$fields["chapterName"]?>">
+            <input name="chaptername" class="form-control"  type="text"value="<?=$fields["chapterName"]?>" required>
           </div> <!-- form-group// -->
-          
+          <?php if (isset($data["chaptername_error"])): ?>
+              <span class="text-danger text-center"><?php echo $data["chaptername_error"]; ?></span><br>
+          <?php endif ?>
           <div class="form-group input-group">
           <div class="input-group-prepend">
               <span class="input-group-text"> Manga's ID : </span>
@@ -52,11 +54,13 @@
 
           <div class="form-group input-group">
             <div class="input-group-prepend">
-              <span class="input-group-text"> Last Chapter :  </span>
+              <span class="input-group-text"> Chapter's number :  </span>
             </div>
-            <input name="lastChapter" class="form-control" type="text" value="<?=$fields["lastChapter"]?>">
+            <input name="lastChapter" class="form-control" type="number" value="<?=$fields["lastChapter"]?>" required>
           </div> <!-- form-group// -->
-
+          <?php if (isset($data["chapterNumber_error"])): ?>
+              <span class="text-danger text-center"><?php echo $data["chapterNumber_error"]; ?></span><br>
+          <?php endif ?>
           <div class="form-group">
             <button name="bntEditChapter" type="submit" class="btn btn-success btn-block"> Save </button>
 			<button type="reset" class="btn btn-secondary btn-block "> Reset</button>

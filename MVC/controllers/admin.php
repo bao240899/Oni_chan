@@ -129,12 +129,23 @@ class admin extends Controller
             $lastChapter=$_POST["lastChapter"];
         }
         $checkChapterName = $this->chapterModel->checkChapterName($mangaID,$chapterName);
+        $checkLastChapter = $this->chapterModel->checkLastChapter($mangaID,$lastChapter);
         if (mysqli_num_rows($checkChapterName) > 0) {
             //Show notification
             $this->view("adminpage", [
                 "Page" => "Addchapter",
                 "MangaID"=>$mangaID,
-                "chaptername_error" => "Sorry... Chapter Name already taken"
+                "chaptername_error" => "Sorry... Chapter Name already taken",
+                "NumberOfNewChapter"=>$this->chapterModel->getLastChapter($mangaID)
+            ]);
+        }
+        elseif (mysqli_num_rows($checkLastChapter) > 0) {
+            //Show notification
+            $this->view("adminpage", [
+                "Page" => "Addchapter",
+                "MangaID"=>$mangaID,
+                "chapterNumber_error" => "Sorry... Chapter number already taken",
+                "NumberOfNewChapter"=>$this->chapterModel->getLastChapter($mangaID)
             ]);
         } else {
             $result=$this->chapterModel->addchapter($chapterName,$mangaID,$content,$view,$lastUpdate,$lastChapter);
@@ -146,8 +157,7 @@ class admin extends Controller
                 $_SESSION["notification_AddChapter"]="fail";
                 header("location:http://localhost:8080/Oni_chan/admin/GetChapter/$mangaID");
             }
-        }
-        
+        }   
     }
     function editchapter($chapterID)
     {

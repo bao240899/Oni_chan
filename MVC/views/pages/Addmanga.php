@@ -11,7 +11,7 @@
             <div class="input-group-prepend">
               <span class="input-group-text"> Book's Name : </span>
             </div>
-            <input name="bookname" class="form-control"  type="text">
+            <input name="bookname" class="form-control"  type="text" required>
           </div> <!-- form-group// -->
           <div class="form-group input-group">
             <div class="input-group-prepend">
