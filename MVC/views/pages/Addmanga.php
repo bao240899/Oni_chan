@@ -23,7 +23,7 @@
             <div class="input-group-prepend">
               <span class="input-group-text"> Artists : </span>
             </div>
-            <input name="cover" class="form-control" type="text">
+            <input name="artists" class="form-control" type="text">
           </div> <!-- form-group// -->
           <div class="form-group input-group">
             <div class="input-group-prepend">
@@ -61,3 +61,4 @@
       </article>
     </div>
   </div>
+  

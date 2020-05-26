@@ -19,7 +19,8 @@
 			<p id="social-title"><strong>CONNECT US</strong></p>
 			  <img class="social-icon" src="https://www.upsieutoc.com/images/2020/05/04/facebook.png" alt="facebook">   
 			  <img class="social-icon" src="https://www.upsieutoc.com/images/2020/05/04/twitter.png" alt="twitter">  
-			  <img class="social-icon" src="https://www.upsieutoc.com/images/2020/05/04/instagram.png" alt="instagram">  
+        <img class="social-icon" src="https://www.upsieutoc.com/images/2020/05/04/instagram.png" alt="instagram">
+      <br><br><a id="card-title" href="http://localhost:8080/Oni_chan/Home/PrivacyPolicy">Privacy Policy</a>  
         </div>
 	 </div>
       </div>

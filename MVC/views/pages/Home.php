@@ -1,3 +1,4 @@
+
 <div class="container">
       <div class="row">
         <div class="col-12">
@@ -71,4 +72,9 @@
     
 </div>
 <div class="clear-both"></div>
-
+<?php if(isset($_SESSION["notification_Login"])&&$_SESSION["notification_Login"]=="success"){?>
+  <?php $_SESSION["notification_Login"]="off" ?>
+  <script>
+      alert("Helllo and welcome back");
+  </script>
+<?php }?>

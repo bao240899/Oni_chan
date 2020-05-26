@@ -6,6 +6,7 @@ class admin extends Controller
     public $commentModel;
     public $userModel;
     public $adminModel;
+    public $categoryModel;
     function __construct()
     {
         if(!isset($_SESSION["adminID"])){
@@ -16,6 +17,7 @@ class admin extends Controller
         $this->chapterModel = $this->model("ChapterModel");
         $this->userModel = $this->model("userModel");
         $this->adminModel = $this->model("adminModel");
+        $this->categoryModel = $this->model("categoryModel");
     }
     
     ///////////////////////////////////
@@ -48,14 +50,23 @@ class admin extends Controller
             $Description = $_POST["description"];
             $Cover = $_POST["cover"];
         }
-        $this->mangaModel->addManga($mangaName, $Author, $Artists, $CategoryID, $Description, $Cover);
-        header("location:http://localhost:8080/Oni_chan/admin/getmanga");
+        $result=$this->mangaModel->addManga($mangaName, $Author, $Artists, $CategoryID, $Description, $Cover);
+        if($result=="true"){
+            $_SESSION["notification_AddManga"]="success";
+            header("location:http://localhost:8080/Oni_chan/admin/getmanga");
+        }
+        else{
+            $_SESSION["notification_AddManga"]="fail";
+            header("location:http://localhost:8080/Oni_chan/admin/getmanga");
+        }
+        
     }
     function editmanga($mangaID)
     {
         $this->view("adminpage", [
             "Page" => "editmanga",
-            "manga" => $this->mangaModel->showManga($mangaID)
+            "manga" => $this->mangaModel->showManga($mangaID),
+            "category"=>$this->categoryModel->getCategory()
         ]);
     }
     function editMangaProcess(){
@@ -68,12 +79,26 @@ class admin extends Controller
             $Description=$_POST["description"];
             $Cover=$_POST["cover"];
         }
-        $this->mangaModel->editManga($mangaID,$mangaName,$Author,$Artists,$CategoryID,$Description,$Cover);
-        header("location:./getmanga");
+        $result=$this->mangaModel->editManga($mangaID,$mangaName,$Author,$Artists,$CategoryID,$Description,$Cover);
+        if($result=="true"){
+            $_SESSION["notification_EditManga"]="success";
+            header("location:http://localhost:8080/Oni_chan/admin/editmanga/$mangaID");
+        }
+        else{
+            $_SESSION["notification_EditManga"]="fail";
+            header("location:http://localhost:8080/Oni_chan/admin/editmanga/$mangaID");
+        }
     }
     function deleteManga($mangaID){
-        $this->mangaModel->DeleteManga($mangaID);
-        header("location:../getmanga");
+        $result=$this->mangaModel->DeleteManga($mangaID);
+        if($result=="true"){
+            $_SESSION["notification_DeleteManga"]="success";
+            header("location:http://localhost:8080/Oni_chan/admin/getmanga");
+        }
+        else{
+            $_SESSION["notification_DeleteManga"]="fail";
+            header("location:http://localhost:8080/Oni_chan/admin/getmanga");
+        }
     }
     /////////////////////// admin chapter/////////////////////////////
     function getchapter($mangaID)
@@ -90,7 +115,8 @@ class admin extends Controller
         }
         $this->view("adminpage", [
             "Page" => "Addchapter",
-            "MangaID"=>$mangaID
+            "MangaID"=>$mangaID,
+            "NumberOfNewChapter"=>$this->chapterModel->getLastChapter($mangaID)
         ]);
     }
     function addChapterProcess(){
@@ -102,8 +128,26 @@ class admin extends Controller
             $lastUpdate=$_POST["lastUpdate"];
             $lastChapter=$_POST["lastChapter"];
         }
-        $this->chapterModel->addchapter($chapterName,$mangaID,$content,$view,$lastUpdate,$lastChapter);
-        header("location:http://localhost:8080/Oni_chan/admin/GetChapter/$mangaID");
+        $checkChapterName = $this->chapterModel->checkChapterName($mangaID,$chapterName);
+        if (mysqli_num_rows($checkChapterName) > 0) {
+            //Show notification
+            $this->view("adminpage", [
+                "Page" => "Addchapter",
+                "MangaID"=>$mangaID,
+                "chaptername_error" => "Sorry... Chapter Name already taken"
+            ]);
+        } else {
+            $result=$this->chapterModel->addchapter($chapterName,$mangaID,$content,$view,$lastUpdate,$lastChapter);
+            if($result=="true"){
+                $_SESSION["notification_AddChapter"]="success";
+                header("location:http://localhost:8080/Oni_chan/admin/GetChapter/$mangaID");
+            }
+            else{
+                $_SESSION["notification_AddChapter"]="fail";
+                header("location:http://localhost:8080/Oni_chan/admin/GetChapter/$mangaID");
+            }
+        }
+        
     }
     function editchapter($chapterID)
     {
@@ -125,8 +169,15 @@ class admin extends Controller
             $lastUpdate=$_POST["lastUpdate"];
             $lastChapter=$_POST["lastChapter"];
         }
-        $this->chapterModel->editchapter($chapterID,$chapterName,$mangaID,$content,$view,$lastUpdate,$lastChapter);
-        header("location:./GetChapter/$mangaID");
+        $result=$this->chapterModel->editchapter($chapterID,$chapterName,$mangaID,$content,$view,$lastUpdate,$lastChapter);
+        if($result=="true"){
+            $_SESSION["notification_EditChapter"]="success";
+            header("location:http://localhost:8080/Oni_chan/admin/EditChapter/$chapterID");
+        }
+        else{
+            $_SESSION["notification_EditChapter"]="fail";
+            header("location:http://localhost:8080/Oni_chan/admin/EditChapter/$chapterID");
+        }
     }
     function deleteChapter($mangaID,$chapterID){
         $this->chapterModel->deleteChapter($chapterID);

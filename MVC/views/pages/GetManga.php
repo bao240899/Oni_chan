@@ -25,12 +25,12 @@
                 <td><?= $fields[3] ?></td>
                 <td><?= $fields[4] ?></td>
                 <td>
-                    <textarea rows="5" cols="20"><?= $fields[5] ?></textarea>
+                    <textarea rows="5" cols="20" readonly><?= $fields[5] ?></textarea>
                </td>
                 <td><?= $fields[6] ?></td>
                 <td><?= $fields[7] ?></td>
                 <td>
-                    <textarea rows="5" cols="15"><?= $fields[8] ?></textarea>
+                    <textarea rows="5" cols="15" readonly><?= $fields[8] ?></textarea>
                 </td>
                 <td><a href="./getchapter/<?= $fields[0] ?>" class="btn btn btn-outline-secondary">chapter</a>
                     <br><br>
@@ -48,3 +48,26 @@
         ?>
     </table>
 </div>
+<?php if(isset($_SESSION["notification_DeleteManga"])&&$_SESSION["notification_DeleteManga"]=="success"){?>
+  <script>
+    alert("Delete manga success");
+    <?php $_SESSION["notification_DeleteManga"]="off"?>
+  </script>
+<?php }else if(isset($_SESSION["notification_DeleteManga"])&&$_SESSION["notification_DeleteManga"]=="fail"){?>
+  <script>
+    alert("Delete manga fail, delete chapter first");
+    <?php $_SESSION["notification_DeleteManga"]="off"?>
+  </script>
+<?php }?>
+
+<?php if(isset($_SESSION["notification_AddManga"])&&$_SESSION["notification_AddManga"]=="success"){?>
+  <script>
+    alert("add manga success");
+    <?php $_SESSION["notification_AddManga"]="off"?>
+  </script>
+<?php }else if(isset($_SESSION["notification_AddManga"])&&$_SESSION["notification_AddManga"]=="fail"){?>
+  <script>
+    alert("add manga fail");
+    <?php $_SESSION["notification_AddManga"]="off"?>
+  </script>
+<?php }?>

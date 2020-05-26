@@ -1,3 +1,9 @@
+<?php if(isset($_SESSION["notification_Login"])&&$_SESSION["notification_Login"]=="fail"){?>
+  <script>
+      alert("User Name or Password is correct");
+      <?php session_destroy(); ?>
+  </script>
+<?php }?>
 <div class="container">
     <div class="card bg-light">
       <article class="card-body mx-auto" style="max-width: 500px;">

@@ -36,18 +36,18 @@
 		  </div>
           </div> <!-- form-group// -->
 
-          <div class="form-group input-group">
+          <div class="form-group input-group" hidden>
             <div class="input-group-prepend">
               <span class="input-group-text"> View :  </span>
             </div>
             <input name="view" class="form-control" type="text" value="<?=$fields["view"]?>">
           </div> <!-- form-group// -->
 
-          <div class="form-group input-group">
+          <div class="form-group input-group" hidden>
             <div class="input-group-prepend">
               <span class="input-group-text"> Last Update :  </span>
             </div>
-            <input name="lastUpdate" class="form-control" type="text" value="<?=$fields["lastUpdate"]?>">
+            <input name="lastUpdate" class="form-control" type="text" value="<?= date('Y-m-d H:i:s') ?>">
           </div> <!-- form-group// -->
 
           <div class="form-group input-group">
@@ -66,3 +66,14 @@
       </article>
     </div>
 </div>
+<?php if (isset($_SESSION["notification_EditChapter"]) && $_SESSION["notification_EditChapter"] == "success") { ?>
+  <script>
+    alert("Edit chapter success");
+    <?php $_SESSION["notification_EditChapter"] = "off" ?>
+  </script>
+<?php } else if (isset($_SESSION["notification_EditChapter"]) && $_SESSION["notification_EditChapter"] == "fail") { ?>
+  <script>
+    alert("Edit chapter fail");
+    <?php $_SESSION["notification_EditChapter"] = "off" ?>
+  </script>
+<?php } ?>

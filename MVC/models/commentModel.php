@@ -5,7 +5,8 @@ class commentModel extends DB{
         FROM user 
         INNER JOIN comment 
         WHERE user.userID = comment.userID 
-        AND comment.mangaID = '$mangaID'";
+        AND comment.mangaID = '$mangaID'
+        ORDER BY `comment`.`date`  ASC";
         return mysqli_query($this->con, $qr);
     }
     public function getCommentByUserID($userID){

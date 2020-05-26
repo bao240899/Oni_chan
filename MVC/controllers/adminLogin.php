@@ -29,9 +29,11 @@ class adminLogin extends Controller
         $check=$this->adminModel->checkLoginAdmin($adminID,$password);
         if(mysqli_num_rows($check)>0){
             $_SESSION["adminID"]= $adminID;
+            $_SESSION["notification_AdminLogin"]="success";
             header("location:http://localhost:8080/Oni_chan/admin/index");
         }
         else {
+            $_SESSION["notification_AdminLogin"]="fail";
             header("location:http://localhost:8080/Oni_chan/adminlogin/login");
         }
     }

@@ -1,3 +1,9 @@
+<?php if(isset( $_SESSION["notification_AdminLogin"])&&$_SESSION["notification_AdminLogin"]=="fail"){?>
+  <script>
+    alert("login fail");
+    <?php $_SESSION["notification_AdminLogin"]="off"?>
+  </script>
+<?php }?>
 <div class="wrapper fadeInDown">
   <div id="formContent">
     <!-- Tabs Titles -->
