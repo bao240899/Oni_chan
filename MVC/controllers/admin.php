@@ -115,7 +115,8 @@ class admin extends Controller
         }
         $this->view("adminpage", [
             "Page" => "Addchapter",
-            "MangaID"=>$mangaID
+            "MangaID"=>$mangaID,
+            "NumberOfNewChapter"=>$this->chapterModel->getLastChapter($mangaID)
         ]);
     }
     function addChapterProcess(){
